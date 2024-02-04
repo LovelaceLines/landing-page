@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material"
-import { GlobalTheme } from "@/_theme/globalTheme"
+import { GlobalTheme } from "./globalTheme"
 import { grey } from "@mui/material/colors"
 
 export const LightTheme = createTheme(GlobalTheme, {

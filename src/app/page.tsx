@@ -1,19 +1,8 @@
-import { getAllPosts } from "@/_lib/api";
+'use client'
+
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const allPosts = getAllPosts();
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
-
-  return (
-    <main>
-      {heroPost.title}
-      <br />
-      {heroPost.tags.join(", ")}
-      <br />
-      {heroPost.date}
-      <br />
-      {heroPost.excerpt}
-    </main>
-  );
+  const router = useRouter();
+  router.push('/home');
 }

@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from "react";
 
 /**
@@ -7,7 +9,9 @@ import { useState, useEffect } from "react";
  * @param initialValue - The initial value to use if no value is found in local storage. Defaults to an empty string.
  * @returns A tuple containing the current value and a function to update the value.
  */
-const useLocalStorage = (key: string, initialValue?: any) => {
+export const useLocalStorage = (key: string, initialValue?: any) => {
+  key = `@ll:${key}`;
+
   const getStorageValue = (key: string, initialValue?: any) => {
     const item = localStorage.getItem(key);
     return item ? JSON.parse(item) : initialValue || '';
@@ -21,5 +25,3 @@ const useLocalStorage = (key: string, initialValue?: any) => {
 
   return [value, setValue];
 };
-
-export default useLocalStorage;

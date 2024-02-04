@@ -22,26 +22,29 @@
       }
     ],
     "paths": {
-      "@/public": [
-        "./public"
+      "@/api": [
+        "./src/api/"
       ],
-      "@/_components/*": [
-        "./src/_components/*"
+      "@/_components": [
+        "./src/_components/index.ts"
       ],
-      "@/_data/*": [
-        "./src/_data/*"
+      "@/_data": [
+        "./src/_data/index.ts"
       ],
-      "@/_hooks/*": [
-        "./src/_hooks/*"
+      "@/_hooks": [
+        "./src/_hooks/index.ts"
       ],
-      "@/_lib/*": [
-        "./src/_lib/*"
+      "@/_libs": [
+        "./src/_libs/index.ts"
       ],
-      "@/_theme/*": [
-        "./src/_theme/*"
+      "@/_templates": [
+        "./src/_templates/index.ts"
       ],
-      "@/_types/*": [
-        "./src/_types/*"
+      "@/_theme": [
+        "./src/_theme/index.ts"
+      ],
+      "@/_types": [
+        "./src/_types/index.ts"
       ],
     }
   },

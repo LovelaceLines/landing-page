@@ -1,4 +1,4 @@
-import { Author } from '@/_types/author';
+import { Author } from '@/_types';
 
 export type Post = {
   slug: string;

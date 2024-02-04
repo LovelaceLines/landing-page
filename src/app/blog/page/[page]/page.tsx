@@ -1,3 +1,9 @@
+import { Box } from "@mui/material";
+
 export default function Page() {
-  return ('page');
+  return (
+    <Box>
+      blog page content
+    </Box>
+  );
 }

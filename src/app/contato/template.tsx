@@ -1,10 +1,8 @@
-import { Box } from "@mui/material"
-import { MenuAppBar } from "../_components/menuAppBar";
+import { Box, Container } from "@mui/material"
 
 export default function Template({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <Box>
-      <MenuAppBar />
       {children}
     </Box>
   );

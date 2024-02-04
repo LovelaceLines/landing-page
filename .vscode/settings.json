@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "remark-html"
+        "remark-html",
+        "landpage"
     ]
 }

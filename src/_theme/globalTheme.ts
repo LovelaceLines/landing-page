@@ -11,5 +11,5 @@ export const GlobalTheme = createTheme({
       main: amber[500],
       contrastText: grey[800],
     },
-  }
+  },
 })

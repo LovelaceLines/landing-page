@@ -1,38 +1,32 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from 'react';
-import { CssBaseline } from '@mui/material';
-import { DarkTheme } from '@/_theme/darkTheme';
-import { LightTheme } from '@/_theme/lightTheme';
+import { createContext } from 'react';
+import { Box, CssBaseline, ThemeProvider } from '@mui/material';
+import { DarkTheme } from './darkTheme';
+import { LightTheme } from './lightTheme';
+import { useLocalStorage } from '@/_hooks';
 
 interface IThemeContextProps {
   themeName: 'light' | 'dark';
   toggleTheme: () => void;
 }
 
-const ThemeContext = createContext({} as IThemeContextProps);
-
-export const useTheme = () => useContext(ThemeContext);
+export const ThemeContext = createContext({} as IThemeContextProps);
 
 export const AppThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [themeName, setThemeName] = useState<'light' | 'dark'>('light');
-
-  const toggleTheme = () => {
-    setThemeName(themeName === 'light' ? 'dark' : 'light');
-    localStorage.setItem('theme', themeName === 'light' ? 'dark' : 'light');
-  };
+  const [themeName, setThemeName] = useLocalStorage('theme', 'light');
+  const toggleTheme = () => setThemeName(themeName === 'light' ? 'dark' : 'light');
 
   const theme = themeName === 'light' ? LightTheme : DarkTheme;
 
-  useEffect(() => {
-    const localTheme = localStorage.getItem('theme') as 'light' | 'dark';
-    if (localTheme) setThemeName(localTheme);
-  }, []);
-
   return (
-    <ThemeContext.Provider value={{ themeName, toggleTheme }}>
+    <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme />
-      {children}
-    </ThemeContext.Provider>
+      <ThemeContext.Provider value={{ themeName, toggleTheme }}>
+        <Box sx={{ maxHeight: '100vh', overflowY: 'auto', '::-webkit-scrollbar': { display: 'none' } }}>
+          {children}
+        </Box>
+      </ThemeContext.Provider>
+    </ThemeProvider>
   );
 };
