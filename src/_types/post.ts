@@ -1,18 +1,15 @@
-import { Author } from '@/_types';
-
 export type Post = {
-  slug: string;
   title: string;
-  date: string;
-  tags: string[];
-  coverImage: string;
-  author: Author;
   excerpt: string;
-  ogImage: {
-    url: string;
-  };
+  tags?: string[];
+  coverImage: string;
+  date: Date;
+  lastmod?: Date;
+  slugAuthors: string[];
+  layout: string;
+  slug: string;
+  slugRecommendedArticles?: string[];
   content: string;
-  preview?: boolean;
 };
 
 export type Project = {

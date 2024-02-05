@@ -1,4 +1,4 @@
-import { PostArticle } from "@/_components";
+import { PostData } from "@/_components";
 import { getAllPosts } from "@/_libs";
 
 export default function Blog() {
@@ -8,8 +8,8 @@ export default function Blog() {
 
   return (
     <>
-      <PostArticle post={heroPost} />
-      {morePosts.map((post) => (<PostArticle key={post.slug} post={post} />))}
+      <PostData post={heroPost} />
+      {morePosts.map((post) => (<PostData key={post.slug} post={post} />))}
     </>
   );
 }

@@ -1,2 +1,2 @@
-export { getAllPosts, getPostBySlug } from './api';
+export { getAllPosts, getPostBySlug, getAllAuthors, getAuthorBySlug } from './api';
 export { markdownToHtml } from './markdownToHtml';

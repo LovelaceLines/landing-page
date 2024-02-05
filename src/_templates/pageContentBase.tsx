@@ -1,4 +1,4 @@
-import { Box, Container, Theme, useMediaQuery } from "@mui/material";
+import { Box, Container } from "@mui/material";
 
 export interface PageContentBaseProps {
   children: React.ReactNode;
@@ -6,10 +6,10 @@ export interface PageContentBaseProps {
 }
 
 export const PageContentBase = ({ children, sx }: PageContentBaseProps) => {
-  const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
-
+  // const smDown = useMediaQuery('(max-width:600px)');
+  // const mdDown = useMediaQuery('(max-width:900px)');
   return (
-    <Box p={mdDown ? '20% 0' : '3% 0'} sx={sx}>
+    <Box paddingY={5} sx={sx}>
       <Container>
         {children}
       </Container>

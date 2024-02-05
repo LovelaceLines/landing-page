@@ -1,4 +1,4 @@
-import { Post } from "@/_types";
+import { Author, Post } from "@/_types";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
@@ -17,10 +17,28 @@ export function getPostBySlug(slug: string) {
 
 export function getAllPosts(): Post[] {
   const slugs = getPostSlugs;
-  console.log('slugs ' + slugs);
   const posts = slugs
     .map(slug => getPostBySlug(slug))
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 
   return posts;
+}
+
+const authorsDirectory = join(process.cwd(), "public/authors");
+const getAuthorSlugs = fs.readdirSync(authorsDirectory);
+
+export function getAuthorBySlug(slug: string) {
+  const realSlug = slug.replace(/\.md$/, "");
+  const fullPath = join(authorsDirectory, slug, `${realSlug}.md`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+
+  return { ...data, slug: realSlug, content } as Author;
+}
+
+export function getAllAuthors(): Author[] {
+  const slugs = getAuthorSlugs;
+  const authors = slugs.map(slug => getAuthorBySlug(slug));
+
+  return authors;
 }

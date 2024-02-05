@@ -1,13 +1,15 @@
-import { Box } from "@mui/material"
+'use client';
+
+import { Box, Container, useMediaQuery } from "@mui/material"
 
 export default function Template({ children }: Readonly<{ children: React.ReactNode }>) {
+  const smDown = useMediaQuery('(max-width:600px)');
+
   return (
-    <Box>
-      blog template content
-
-      {children}
-
-      blog template content
-    </Box>
+    <Container>
+      <Box paddingY={2}>
+        {children}
+      </Box>
+    </Container>
   );
 }

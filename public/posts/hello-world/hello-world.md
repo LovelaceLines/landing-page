@@ -2,13 +2,12 @@
 title: "Learn How to Pre-render Pages Using Static Generation with Next.js"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
 tags: ["post", "lorem"]
-coverImage: "/assets/blog/hello-world/cover.jpg"
-date: "2020-03-16T05:35:07.322Z"
-author:
-  name: Tim Neutkens
-  picture: "/assets/blog/authors/tim.jpeg"
-ogImage:
-  url: "/assets/blog/hello-world/cover.jpg"
+coverImage: "/posts/hello-world/imagem.jpeg"
+date: "2020-06-16T05:35:07.322Z"
+lastmod: "2020-03-16T05:35:07.322Z"
+slugAuthors: ["gaviao", "capivara"]
+layout: default
+slugRecommendedArticles: ["preview", "dynamic-routing"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
@@ -42,9 +41,9 @@ Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidu
 
 > Citação de alguem
 
-`linha de codigo de programação`
+`linha longa de codigo de programação sem linguagem nenhuma bla bla bla`
 
-```
+```javascript
 export type { Author } from './author'
 export type { Post, Project, ProjectsData } from './post'
 export type { Params } from './nextRouting'
