@@ -1,15 +1,18 @@
-import { PostData } from "@/_components";
-import { getAllPosts } from "@/_libs";
+import { PostFlatData, TagList } from "@/_components";
+import { getAllPosts, getAllTags } from "@/_libs";
 
 export default function Blog() {
   const allPosts = getAllPosts();
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
+  const tags = getAllTags();
 
   return (
     <>
-      <PostData post={heroPost} />
-      {morePosts.map((post) => (<PostData key={post.slug} post={post} />))}
+      <TagList tags={tags} />
+      {allPosts.map(post =>
+        <PostFlatData key={post.slug} post={post} />
+      )}
     </>
   );
 }

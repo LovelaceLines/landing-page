@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useContext, useState } from 'react';
 import Link from 'next/link';
@@ -33,7 +33,7 @@ export const MenuAppBar = () => {
   const Logo = () => (
     <Link href='/home'>
       <Box display='flex' alignItems='center'>
-        <Image src='./lovelace-lines-white.svg' alt='Logo' width={30} height={30} />
+        <Image src='/lovelace-lines-white.svg' alt='Logo' width={30} height={30} />
       </Box>
     </Link>
   );

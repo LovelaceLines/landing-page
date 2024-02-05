@@ -3,6 +3,8 @@
 import { Box, Container, useMediaQuery } from "@mui/material";
 import React from "react";
 
+import { ContentStyles } from "@/_styles";
+
 interface PostContentProps {
   content: string;
 }
@@ -13,21 +15,7 @@ export const PostContent = ({ content }: PostContentProps) => {
   return (
     <Container maxWidth='md' disableGutters={smDown}>
       <Box
-        sx={{
-          'img': { width: '100%', height: 'auto' },
-          'a': { color: 'primary.main' },
-          'p': { textAlign: 'justify' },
-          'code': {
-            display: 'flex',
-            flexWrap: 'nowrap',
-            textWrap: 'nowrap',
-            overflow: 'auto',
-            bgcolor: 'background.paper',
-            borderRadius: 1,
-            p: 1,
-            my: 1,
-          },
-        }}
+        sx={ContentStyles}
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </Container>

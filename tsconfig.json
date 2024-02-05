@@ -46,6 +46,9 @@
       "@/_types": [
         "./src/_types/index.ts"
       ],
+      "@/_styles": [
+        "./src/_styles/index.ts"
+      ],
     }
   },
   "include": [

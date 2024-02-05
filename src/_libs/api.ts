@@ -1,4 +1,4 @@
-import { Author, Post } from "@/_types";
+import { Author, Post, Tag } from "@/_types";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
@@ -41,4 +41,23 @@ export function getAllAuthors(): Author[] {
   const authors = slugs.map(slug => getAuthorBySlug(slug));
 
   return authors;
+}
+
+const tagsDirectory = join(process.cwd(), "public/tags");
+const getTagSlugs = fs.readdirSync(tagsDirectory);
+
+export function getTagBySlug(slug: string) {
+  const realSlug = slug.replace(/\.md$/, "");
+  const fullPath = join(tagsDirectory, `${realSlug}.md`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+
+  return { ...data, slug: realSlug } as Tag;
+}
+
+export function getAllTags(): Tag[] {
+  const slugs = getTagSlugs;
+  const tags = slugs.map(slug => getTagBySlug(slug));
+
+  return tags;
 }

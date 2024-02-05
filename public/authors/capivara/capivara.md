@@ -9,9 +9,11 @@ instagram: https://www.instagram.com/capivara
 twitter: https://twitter.com/capivara
 linkedin: https://www.linkedin.com/capivara
 github: https://github.com/capivara
-slugRecommendedArticles: ["hello-world"]
+slugRecommendedArticles: ["explorando-o-mundo-das-frutas-mais-saborosas", "reportagem-especial-jornada-da-harmonia-na-natureza", "hello-world"]
 ---
 
 Parabéns por me encontrar aqui no blog! 🌿📚 Como uma capivara multitarefa, eu tenho a alegria de compartilhar um pouco sobre minha jornada profissional como escritora e repórter. 📝✨ Ao longo dos anos, mergulhei nas águas fascinantes da comunicação, transmitindo histórias autênticas e inspiradoras da vida selvagem. 🌍🐾 Como escritora, tenho explorado as nuances da natureza e suas criaturas, oferecendo uma perspectiva única e, muitas vezes, humorística sobre o reino animal.
 
-Minha paixão por contar histórias transcende as barreiras do mundo animal, alcançando públicos diversos. 🌐💬 Como repórter, tive a oportunidade de participar de entrevistas exclusivas com outros habitantes da floresta, compartilhando suas experiências e desafios. 🎙️🌳 Acredito que a comunicação eficaz é essencial para construir pontes e promover a compreensão entre diferentes espécies, e é isso que me motiva a continuar minha jornada como capivara escritora e repórter neste vasto universo de oportunidades. 🚀✍️ Se você está em busca de histórias autênticas, perspectivas únicas e um toque de humor selvagem, fique à vontade para se juntar a mim nesta jornada de descobertas e conexões no mundo animal e além! 🌈📘 #CapivaraEscritora #ReporterSelvagem #ComunicacaoAnimal
+Minha paixão por contar histórias transcende as barreiras do mundo animal, alcançando públicos diversos. 🌐💬 Como repórter, tive a oportunidade de participar de entrevistas exclusivas com outros habitantes da floresta, compartilhando suas experiências e desafios. 🎙️🌳 Acredito que a comunicação eficaz é essencial para construir pontes e promover a compreensão entre diferentes espécies, e é isso que me motiva a continuar minha jornada como capivara escritora e repórter neste vasto universo de oportunidades. 🚀✍️ Se você está em busca de histórias autênticas, perspectivas únicas e um toque de humor selvagem, fique à vontade para se juntar a mim nesta jornada de descobertas e conexões no mundo animal e além! 🌈📘 
+
+#CapivaraEscritora #ReporterSelvagem #ComunicacaoAnimal
