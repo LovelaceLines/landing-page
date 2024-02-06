@@ -1,8 +1,7 @@
 'use client'
 
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, IconButton, Link, MobileStepper, Paper, Stack, Typography } from '@mui/material';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import { Box, Card, CardActions, CardContent, CardMedia, IconButton, Link, MobileStepper, Paper, Stack, Typography } from '@mui/material';
+import { KeyboardArrowRight, KeyboardArrowLeft } from '@mui/icons-material';
 import { useState } from 'react';
 import Image from 'next/image';
 
@@ -36,15 +35,15 @@ export const ProjectCard = (props: IProjectCardProps) => {
   const Carousel = () => (
     <CardMedia sx={{ position: 'relative' }}>
       <Image src={props.imagesPath[activeStep]} alt={`Step ${activeStep}`} width={1024} height={768} style={ImageStyle} />
-      <MobileStepper variant='dots' steps={maxSteps} position="static" activeStep={activeStep}
+      <MobileStepper variant='dots' steps={maxSteps} position="static" activeStep={activeStep} sx={{ background: 'transparent' }}
         nextButton={
           <IconButton size="small" onClick={handleNext}>
-            <KeyboardArrowRightIcon />
+            <KeyboardArrowRight />
           </IconButton>
         }
         backButton={
           <IconButton size="small" onClick={handleBack}>
-            <KeyboardArrowLeftIcon />
+            <KeyboardArrowLeft />
           </IconButton>
         }
       />

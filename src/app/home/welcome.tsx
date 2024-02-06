@@ -1,7 +1,7 @@
 'use client'
 
-import { Box, Button, Container, Stack, Theme, Typography, useMediaQuery } from '@mui/material';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Box, Button, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { KeyboardArrowDown, KeyboardArrowRight } from '@mui/icons-material';
 import { PageContentBase } from '@/_templates';
 
 const backgroundStyles = {
@@ -17,18 +17,27 @@ const backgroundStyles = {
 };
 
 export const Welcome = () => {
-  const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
+  const mdDown = useMediaQuery(useTheme().breakpoints.down('md'));
 
   return (
     <PageContentBase sx={backgroundStyles}>
       <Stack alignItems='flex-start' spacing={4}>
-        <Box>
-          <Typography color='primary.contrastText' variant={mdDown ? 'h2' : 'h1'}>Lovelace Lines</Typography>
-          <Typography color='primary.contrastText' variant="h6">Desenvolvendo soluções de modo descomplicado!</Typography>
+        <Box width={mdDown ? '100%' : '50%'}>
+          <Typography color='primary.contrastText' variant={mdDown ? 'h4' : 'h3'}>
+            Conheça a Lovelace Lines e descubra como podemos lhe ajudar a alcançar seus objetivos.
+          </Typography>
+          <Typography color='primary.contrastText' variant='subtitle1'>
+            Veja como uma comunidade de apaixonados por tecnologia cresceu para se tornar uma referência em desenvolvimento de software.
+          </Typography>
         </Box>
-        <Button variant='contained' endIcon={<KeyboardArrowDownIcon />} href='#sobre'>
-          Veja mais
-        </Button>
+        <Box display='flex' flexDirection={mdDown ? 'column-reverse' : 'row'} gap={2}>
+          <Button variant='contained' endIcon={<KeyboardArrowDown />} href='#sobre'>
+            Veja mais
+          </Button>
+          <Button variant='contained' endIcon={<KeyboardArrowRight />} href='/blog'>
+            Conteúdo em destaque
+          </Button>
+        </Box>
       </Stack>
     </PageContentBase>
   );

@@ -4,7 +4,7 @@ import { useContext, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { AppBar, Box, Container, IconButton, Menu, MenuItem, Theme, Toolbar, useMediaQuery } from '@mui/material';
-import { Brightness4, Brightness5, GitHub, LinkedIn, Menu as MenuIcon } from '@mui/icons-material';
+import { Brightness4, Brightness5, GitHub, LinkedIn, Instagram, Menu as MenuIcon } from '@mui/icons-material';
 import { ThemeContext } from '@/_theme';
 
 const navLinks = [
@@ -16,6 +16,7 @@ const navLinks = [
 
 const socialLinks = [
   { url: 'https://www.linkedin.com/in/lovelacelines/', icon: <LinkedIn /> },
+  { url: 'https://www.instagram.com/lovelacelines/', icon: <Instagram /> },
   { url: 'https://github.com/LovelaceLines', icon: <GitHub /> },
 ];
 
@@ -48,7 +49,7 @@ export const MenuAppBar = () => {
     </Box>
   );
 
-  const SocialLinks = () => (
+  const SideIcons = () => (
     <Box>
       <IconButton onClick={toggleTheme} color='inherit'>
         {themeName === 'light' ? <Brightness4 /> : <Brightness5 />}
@@ -90,9 +91,11 @@ export const MenuAppBar = () => {
         <Toolbar disableGutters>
           <Box display='flex' flex={1} alignItems='center' flexDirection='row' justifyContent='space-between'>
             {smDown && <HamburgerMenu />}
-            <Logo />
-            {!smDown && <NavigationLinks />}
-            <SocialLinks />
+            <Box display='flex' gap={2}>
+              <Logo />
+              {!smDown && <NavigationLinks />}
+            </Box>
+            <SideIcons />
           </Box>
         </Toolbar>
       </Container>
