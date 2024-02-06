@@ -1,14 +1,13 @@
 'use client'
 
 import { useState } from 'react';
-import { Box, Container, IconButton, Modal, Theme, Typography, useMediaQuery } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
 import { WhatsApp, Instagram, Email, LinkedIn, GitHub, Pix } from '@mui/icons-material';
 import { ModalBase } from '../../_templates/modalBase';
 import Image from 'next/image';
 import { PageContentBase } from '../../_templates/pageContentBase';
 
 export const Contact = () => {
-  const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

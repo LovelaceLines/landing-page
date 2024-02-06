@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material';
+import { ThemeOptions, createTheme } from '@mui/material';
 import { pink, amber, grey } from '@mui/material/colors';
 
 export const GlobalTheme = createTheme({
@@ -12,4 +12,4 @@ export const GlobalTheme = createTheme({
       contrastText: grey[800],
     },
   },
-})
+} as ThemeOptions);

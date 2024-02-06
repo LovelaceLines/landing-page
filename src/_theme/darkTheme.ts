@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material';
+import { ThemeOptions, createTheme } from '@mui/material';
 import { blueGrey, grey } from '@mui/material/colors';
 import { GlobalTheme } from "./globalTheme"
 
@@ -15,4 +15,4 @@ export const DarkTheme = createTheme(GlobalTheme, {
       disabled: grey[400],
     }
   }
-})
+} as ThemeOptions);

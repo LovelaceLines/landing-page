@@ -6,4 +6,4 @@ export default function Providers({ children }: Readonly<{ children: React.React
       {children}
     </AppThemeProvider>
   );
-};
+}

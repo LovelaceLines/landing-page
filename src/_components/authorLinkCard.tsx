@@ -1,5 +1,5 @@
 import { Author } from "@/_types";
-import { Avatar, Box, Card, Link, Typography } from "@mui/material";
+import { Avatar, Box, Link, Typography } from "@mui/material";
 
 export const AuthorLinkCard = ({ author }: { author: Author }) => {
   return (

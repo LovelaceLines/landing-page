@@ -6,12 +6,6 @@ import Axios from 'axios';
 import { Box, Container, Grid, Link, Stack, Theme, Typography, useMediaQuery } from '@mui/material';
 import { Feed } from '@/_types';
 
-const reelsStyles = {
-  width: 'auto',
-  height: 'auto',
-  aspectRatio: '9/16',
-};
-
 export const InstagramFeed = () => {
   const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
   const [feed, setFeed] = useState<Feed[]>([]);

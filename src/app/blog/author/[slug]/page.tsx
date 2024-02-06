@@ -4,10 +4,10 @@ import { notFound } from "next/navigation"
 
 const fetchAuthor = (slug: string) => {
   try { return getAuthorBySlug(slug) }
-  catch (error: any) { return notFound() }
+  catch (error: unknown) { return notFound() }
 }
 
-export default async function Page({ params }: any) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const author = fetchAuthor(params.slug);
   author.content = await markdownToHtml(author.content || "");
   const postsRecommended = author.slugRecommendedArticles ?

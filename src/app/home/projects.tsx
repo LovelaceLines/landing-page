@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { IProjectCardProps, ProjectCard } from '@/_components';
 import { PageContentBase } from '@/_templates';
 

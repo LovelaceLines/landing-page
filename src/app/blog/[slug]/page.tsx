@@ -5,7 +5,7 @@ import { Params } from "@/_types";
 
 const fetchPost = (slug: string) => {
   try { return getPostBySlug(slug) }
-  catch (error: any) { return notFound() }
+  catch (error: unknown) { return notFound() }
 }
 
 export default async function Page({ params }: Params) {
