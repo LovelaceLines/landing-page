@@ -15,11 +15,12 @@ export function getPostBySlug(slug: string) {
   return { ...data, slug: realSlug, content } as Post;
 }
 
-export function getAllPosts(): Post[] {
+export function getAllPosts(page: number = 0, limit: number = Number.MAX_SAFE_INTEGER): Post[] {
   const slugs = getPostSlugs;
   const posts = slugs
     .map(slug => getPostBySlug(slug))
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+    .slice(page * limit, (page + 1) * limit);
 
   return posts;
 }
@@ -36,9 +37,12 @@ export function getAuthorBySlug(slug: string) {
   return { ...data, slug: realSlug, content } as Author;
 }
 
-export function getAllAuthors(): Author[] {
+export function getAllAuthors(page: number = 0, limit: number = Number.MAX_SAFE_INTEGER): Author[] {
   const slugs = getAuthorSlugs;
-  const authors = slugs.map(slug => getAuthorBySlug(slug));
+  const authors = slugs
+    .map(slug => getAuthorBySlug(slug))
+    .sort((author1, author2) => (author1.name > author2.name ? 1 : -1))
+    .slice(page * limit, (page + 1) * limit);
 
   return authors;
 }

@@ -1,4 +1,4 @@
-import { PostFlatData, TagList } from "@/_components";
+import { Pagination, PostFlatData, TagList } from "@/_components";
 import { getAllPosts, getAllTags } from "@/_libs";
 
 export default function Blog() {
@@ -13,6 +13,7 @@ export default function Blog() {
       {allPosts.map(post =>
         <PostFlatData key={post.slug} post={post} />
       )}
+      <Pagination slug='blog' />
     </>
   );
 }

@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "remark-html",
         "landpage",
-        "blog"
+        "blog",
+        "tag"
     ]
 }
