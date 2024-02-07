@@ -6,6 +6,7 @@ export { ProjectCard } from './projectCard';
 export type { IProjectCardProps } from './projectCard';
 export { AuthorData } from './authorData';
 export { AuthorContent } from './authorContent';
+export { AuthorLinkCard } from './authorLinkCard';
 export { PostFlatData } from './postFlatData';
 export { PostsRecommended } from './postsRecommended';
 export { TagList } from './tagList';

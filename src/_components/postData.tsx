@@ -1,30 +1,23 @@
-'use client';
-
-import React from "react";
-import { Box, Chip, Container, Typography, useMediaQuery, useTheme } from "@mui/material";
+import Image from "next/image";
+import { Box, Chip, Container, Typography } from "@mui/material";
 import { format } from 'date-fns';
 import { ptBR } from "date-fns/locale";
 import { Author, Post } from "@/_types";
-import Image from "next/image";
-import { AuthorLinkCard } from "./authorLinkCard";
+import { AuthorLinkCard } from "@/_components";
+import Link from "next/link";
 
-interface ArticleProps {
-  post: Post;
-  authors: Author[];
-}
-
-export const PostData = ({ post, authors }: ArticleProps) => {
-  const smDown = useMediaQuery(useTheme().breakpoints.down('sm'));
-
+export const PostData = ({ post, authors }: { post: Post, authors: Author[] }) => {
   return (
-    <Container disableGutters={smDown}>
+    <Container disableGutters>
       <Box display='flex' alignItems='center' flexDirection='column' gap={1}>
         <Box display='flex' gap={1}>
           {post.tags && post.tags.map(tag =>
-            <Chip label={tag} component='a' clickable color='primary' key={tag} />)}
+            <Link key={tag} href={`/blog/tag/${tag}`} passHref>
+              <Chip label={tag} clickable color='primary' key={tag} />
+            </Link>)}
         </Box>
 
-        <Typography variant={smDown ? 'h4' : 'h3'} align='center' >{post.title}</Typography>
+        <Typography variant='h4' align='center' >{post.title}</Typography>
 
         <Typography variant='subtitle2' align='center'>{
           format(new Date(post.date), "dd 'de' MMM, yyyy", { locale: ptBR })}

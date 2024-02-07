@@ -1,6 +1,7 @@
-import { getAuthorBySlug, getPostBySlug, markdownToHtml } from "@/_libs"
+import { notFound } from "next/navigation";
+
+import { getAuthorBySlug, getPostBySlug, markdownToHtml } from "@/_libs";
 import { AuthorContent, AuthorData, PostsRecommended } from "@/_components";
-import { notFound } from "next/navigation"
 
 const fetchAuthor = (slug: string) => {
   try { return getAuthorBySlug(slug) }

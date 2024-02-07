@@ -1,16 +1,13 @@
-'use client';
-
-import { Post } from "@/_types";
-import { Box, Container, Typography, useMediaQuery, useTheme } from "@mui/material";
+import Link from "next/link";
+import { Box, Container, Typography } from "@mui/material";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import Link from "next/link";
+
+import { Post } from "@/_types";
 
 export const PostFlatData = ({ post }: { post: Post }) => {
-  const smDown = useMediaQuery(useTheme().breakpoints.down('sm'));
-
   return (
-    <Container maxWidth='md' disableGutters={smDown}>
+    <Container maxWidth='md' disableGutters>
       <Box display='flex' flexDirection='column' gap={1}>
         <Link href={`/blog/${post.slug}`} passHref style={{ color: 'inherit' }}>
           <Typography variant='h6'>{post.title}</Typography>

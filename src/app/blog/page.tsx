@@ -13,7 +13,7 @@ export default function Blog() {
       {allPosts.map(post =>
         <PostFlatData key={post.slug} post={post} />
       )}
-      <Pagination slug='blog' />
+      <Pagination params={{ slug: "blog", page: 0 }} />
     </>
   );
 }

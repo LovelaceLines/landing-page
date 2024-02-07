@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+
 import { PostData, PostContent, PostsRecommended } from "@/_components";
 import { getAuthorBySlug, getPostBySlug, markdownToHtml } from "@/_libs";
 import { Params } from "@/_types";

@@ -1,4 +1,4 @@
-export const ContentStyles = (): React.CSSProperties => ({
+export const ContentStyles = ({
   'img': { width: '100%', height: 'auto' },
   'a': { color: 'primary.main' },
   'p': { textAlign: 'justify' },

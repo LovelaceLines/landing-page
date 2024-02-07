@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { Box, IconButton, Typography } from "@mui/material";
-import { Instagram, GitHub, LinkedIn, AlternateEmail, X } from '@mui/icons-material';
+import { Box, Typography } from "@mui/material";
+import { Instagram, GitHub, LinkedIn, Mail, X } from '@mui/icons-material';
 
 import { Author } from "@/_types";
+import Link from "next/link";
 
 export const AuthorData = ({ author }: { author: Author }) => {
   return (
@@ -14,22 +15,22 @@ export const AuthorData = ({ author }: { author: Author }) => {
       <Typography variant="h5">{author.name}</Typography>
       <Typography variant="subtitle2">{author.company}, {author.occupation}</Typography>
 
-      <Box display="flex" justifyContent="center" alignItems="center">
-        <IconButton disabled={false} size='large' color='primary'>
-          <Instagram fontSize='large' color='secondary' component='a' href={author.instagram} target="_blank" />
-        </IconButton>
-        <IconButton disabled={false} size='large' color='primary'>
-          <GitHub fontSize='large' color='secondary' component='a' href={author.github} target="_blank" />
-        </IconButton>
-        <IconButton disabled={false} size='large' color='primary'>
-          <LinkedIn fontSize='large' color='secondary' component='a' href={author.linkedin} target="_blank" />
-        </IconButton>
-        <IconButton disabled={false} size='large' color='primary'>
-          <AlternateEmail fontSize='large' color='secondary' component='a' href={author.email} target="_blank" />
-        </IconButton>
-        <IconButton disabled={false} size='large' color='primary'>
-          <X fontSize='large' color='secondary' component='a' href={author.email} target="_blank" />
-        </IconButton>
+      <Box display="flex" justifyContent="center" alignItems="center" gap={2}>
+        <Link href={author.instagram ?? ''} passHref>
+          <Instagram fontSize='medium' color='primary' />
+        </Link>
+        <Link href={author.github ?? ''} passHref>
+          <GitHub fontSize='medium' color='primary' />
+        </Link>
+        <Link href={author.linkedin ?? ''} passHref>
+          <LinkedIn fontSize='medium' color='primary' />
+        </Link>
+        <Link href={author.email ?? ''} passHref>
+          <Mail fontSize='medium' color='primary' />
+        </Link>
+        <Link href={author.email ?? ''} passHref>
+          <X fontSize='medium' color='primary' />
+        </Link>
       </Box>
     </Box>
   );
