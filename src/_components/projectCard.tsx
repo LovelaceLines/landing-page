@@ -21,6 +21,7 @@ const ImageStyle = {
 };
 
 export const ProjectCard = (props: IProjectCardProps) => {
+  // TODO Refactor / Performance: useState to useReducer
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = props.imagesPath.length;
 

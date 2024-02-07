@@ -1,5 +1,7 @@
 'use client'
 
+// TODO - Refactor
+
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Axios from 'axios';

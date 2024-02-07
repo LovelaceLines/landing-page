@@ -1,17 +1,10 @@
-'use client'
-
-import { useState } from 'react';
 import { Box, IconButton, Typography } from '@mui/material';
-import { WhatsApp, Instagram, Email, LinkedIn, GitHub, Pix } from '@mui/icons-material';
-import { ModalBase } from '../../_templates/modalBase';
-import Image from 'next/image';
-import { PageContentBase } from '../../_templates/pageContentBase';
+import { WhatsApp, Instagram, Email, LinkedIn, GitHub } from '@mui/icons-material';
+
+import { PageContentBase } from '@/_templates';
+import { OpenModalPix } from './openModalPix';
 
 export const Contact = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   return (
     <PageContentBase>
       <Box display='flex' flexDirection='column' gap={1}>
@@ -45,16 +38,7 @@ export const Contact = () => {
         </Box>
         <Box>
           <Typography>Se você também adora soluções modernas e quer dar uma forcinha na nossa missão, que tal considerar fazer uma doação? Saiba que cada contribuição, por menor que seja, faz uma grande diferença! Ela nos ajuda a manter nossos projetos e iniciativas em pleno vapor, garantindo que continuemos a oferecer acesso gratuito a soluções valiosas para todos.</Typography>
-          <IconButton onClick={handleOpen} size='large'>
-            <Pix color='primary' fontSize='large' />
-          </IconButton>
-          <ModalBase open={open} onClose={handleClose}>
-            <Typography variant='h6'>Doações</Typography>
-            <br />
-            <Image src='/qr-code-pix.jpeg' alt='QR Code' width={200} height={200} />
-            <br />
-            <Typography>Chave Pix: +55 (88) 99246-5315</Typography>
-          </ModalBase>
+          <OpenModalPix />
         </Box>
       </Box>
     </PageContentBase>

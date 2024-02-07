@@ -1,15 +1,12 @@
-'use client'
-
-import { Box, Theme, Typography, useMediaQuery } from '@mui/material';
-import { InstagramFeed } from '@/_components';
 import Image from 'next/image';
+import { Box, Typography } from '@mui/material';
+
+import { InstagramFeed } from '@/_components';
 import { PageContentBase } from '@/_templates';
 
 export const About = () => {
-  const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
-
   const Texts = () => (
-    <Box width={mdDown ? 'auto' : '50%'} display='flex' flexDirection='column' gap={4}>
+    <Box display='flex' flexDirection='column' gap={4}>
       <Typography variant="h4">Quem somos?</Typography>
       <Box display='flex' flexDirection='column' gap={1}>
         <Typography align='justify'>
@@ -30,9 +27,11 @@ export const About = () => {
 
   return (
     <PageContentBase sx={{ paddingBottom: 0 }}>
-      <Box id="sobre" display='flex' flexDirection={mdDown ? 'column' : 'row'} alignItems='center' justifyContent='space-between' gap={2} position='relative'>
+      <Box id="sobre" display='flex' justifyContent='space-between' alignItems='center' gap={2}>
         <Texts />
-        {mdDown ? null : <Image src='https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt="Imagem ilustrativa" width={768} height={1024} style={{ width: '500px', height: 'auto', objectFit: 'cover' }} />}
+        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Image src='https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt="Imagem ilustrativa" width={768} height={1024} style={{ width: '500px', height: 'auto', objectFit: 'cover' }} />
+        </Box>
       </Box>
       <InstagramFeed />
     </PageContentBase>

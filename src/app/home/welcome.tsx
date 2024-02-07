@@ -1,7 +1,6 @@
-'use client'
-
-import { Box, Button, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import { KeyboardArrowDown, KeyboardArrowRight } from '@mui/icons-material';
+
 import { PageContentBase } from '@/_templates';
 
 const backgroundStyles = {
@@ -17,20 +16,18 @@ const backgroundStyles = {
 };
 
 export const Welcome = () => {
-  const mdDown = useMediaQuery(useTheme().breakpoints.down('md'));
-
   return (
     <PageContentBase sx={backgroundStyles}>
       <Stack alignItems='flex-start' spacing={4}>
-        <Box width={mdDown ? '100%' : '50%'}>
-          <Typography color='primary.contrastText' variant={mdDown ? 'h4' : 'h3'}>
+        <Box sx={{ width: { xs: '100%', sm: '50%' } }}>
+          <Typography color='primary.contrastText' variant='h4'>
             Conheça a Lovelace Lines e descubra como podemos lhe ajudar a alcançar seus objetivos.
           </Typography>
           <Typography color='primary.contrastText' variant='subtitle1'>
             Veja como uma comunidade de apaixonados por tecnologia cresceu para se tornar uma referência em desenvolvimento de software.
           </Typography>
         </Box>
-        <Box display='flex' flexDirection={mdDown ? 'column-reverse' : 'row'} gap={2}>
+        <Box display='flex' gap={2} sx={{ flexDirection: { xs: 'column-reverse', sm: 'row' } }}>
           <Button variant='contained' endIcon={<KeyboardArrowDown />} href='#sobre'>
             Veja mais
           </Button>

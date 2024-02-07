@@ -63,7 +63,7 @@ export const MenuAppBar = () => {
   );
 
   const HamburgerMenu = () => (
-    <Box>
+    <>
       <IconButton onClick={handleOpenNavMenu} size='large' color='inherit' >
         <MenuIcon />
       </IconButton>
@@ -82,7 +82,7 @@ export const MenuAppBar = () => {
         }}>
         <NavigationLinks />
       </Menu>
-    </Box>
+    </>
   );
 
   return (
