@@ -3,6 +3,7 @@
         "remark-html",
         "landpage",
         "blog",
-        "tag"
+        "tag",
+        "useLocalStorage"
     ]
 }

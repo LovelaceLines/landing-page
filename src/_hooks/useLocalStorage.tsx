@@ -13,6 +13,8 @@ export const useLocalStorage = (key: string, initialValue?: unknown) => {
   key = `@ll:${key}`;
 
   const getStorageValue = (key: string, initialValue?: unknown) => {
+    if (typeof window === 'undefined') return;
+
     const item = localStorage.getItem(key);
     return item ? JSON.parse(item) : initialValue || '';
   };
