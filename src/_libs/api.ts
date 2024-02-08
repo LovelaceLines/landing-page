@@ -6,7 +6,7 @@ import { join } from "path";
 const postsDirectory = join(process.cwd(), "public/posts");
 const getPostSlugs = fs.readdirSync(postsDirectory);
 
-export function getPostBySlug(slug: string) {
+export function getPostBySlug(slug: string): Post {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(postsDirectory, slug, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -28,7 +28,7 @@ export function getAllPosts(page: number = 0, limit: number = Number.MAX_SAFE_IN
 const authorsDirectory = join(process.cwd(), "public/authors");
 const getAuthorSlugs = fs.readdirSync(authorsDirectory);
 
-export function getAuthorBySlug(slug: string) {
+export function getAuthorBySlug(slug: string): Author {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(authorsDirectory, slug, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -50,7 +50,7 @@ export function getAllAuthors(page: number = 0, limit: number = Number.MAX_SAFE_
 const tagsDirectory = join(process.cwd(), "public/tags");
 const getTagSlugs = fs.readdirSync(tagsDirectory);
 
-export function getTagBySlug(slug: string) {
+export function getTagBySlug(slug: string): Tag {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(tagsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
