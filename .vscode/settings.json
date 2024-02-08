@@ -4,6 +4,7 @@
         "landpage",
         "blog",
         "tag",
-        "useLocalStorage"
+        "useLocalStorage",
+        "menuAppBar"
     ]
 }

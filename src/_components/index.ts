@@ -12,3 +12,5 @@ export { PostsRecommended } from './postsRecommended';
 export { TagList } from './tagList';
 export { TagData } from './tagData';
 export { Pagination } from './pagination';
+export { ToggleThemeIcon } from './toggleThemeIcon';
+export { MenuHamburger } from './menuHamburger';
