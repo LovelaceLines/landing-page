@@ -23,13 +23,16 @@
     ],
     "paths": {
       "@/api": [
-        "./src/api/"
+        "./src/app/api"
       ],
       "@/_components": [
         "./src/_components/index.ts"
       ],
       "@/_data": [
         "./src/_data/index.ts"
+      ],
+      "@/env": [
+        "./src/env"
       ],
       "@/_hooks": [
         "./src/_hooks/index.ts"

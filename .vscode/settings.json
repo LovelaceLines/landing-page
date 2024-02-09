@@ -6,6 +6,7 @@
         "tag",
         "useLocalStorage",
         "menuAppBar",
-        "SEO"
+        "SEO",
+        "api"
     ]
 }
