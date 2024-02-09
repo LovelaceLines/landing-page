@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { Box, Card, CardActions, CardContent, CardMedia, IconButton, Link, MobileStepper, Paper, Stack, Typography } from '@mui/material';
 import { KeyboardArrowRight, KeyboardArrowLeft } from '@mui/icons-material';

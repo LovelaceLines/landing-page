@@ -2,8 +2,8 @@
 // https://developers.facebook.com/apps/
 // https://www.youtube.com/watch?v=e-hLLtz-QL0
 
-import { Feed } from "@/_types";
-import env from "@/env";
+import { Feed } from '@/_types';
+import env from '@/env';
 
 export async function GET() {
   if (!process.env.INSTAGRAM_TOKEN) throw new Error('Token not found');
@@ -18,7 +18,7 @@ export async function GET() {
       .then(res => res.data);
     return Response.json(response);
   } catch (e) {
-    if (env.NODE_ENV === 'development') console.log("Error fetching Instagram Feed:", e);
+    if (env.NODE_ENV === 'development') console.log('Error fetching Instagram Feed:', e);
     return Response.error();
   }
 }

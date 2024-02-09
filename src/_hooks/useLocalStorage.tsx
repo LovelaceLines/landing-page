@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 /**
  * Custom hook for managing values in local storage.

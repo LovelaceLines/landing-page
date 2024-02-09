@@ -1,9 +1,9 @@
-import Image from "next/image";
-import { Box, Typography } from "@mui/material";
+import Image from 'next/image';
+import { Box, Typography } from '@mui/material';
 import { Instagram, GitHub, LinkedIn, Mail, X } from '@mui/icons-material';
 
-import { Author } from "@/_types";
-import Link from "next/link";
+import { Author } from '@/_types';
+import Link from 'next/link';
 
 export const AuthorData = ({ author }: { author: Author }) => {
   return (
@@ -12,10 +12,10 @@ export const AuthorData = ({ author }: { author: Author }) => {
 
       <br />
 
-      <Typography variant="h5">{author.name}</Typography>
-      <Typography variant="subtitle2">{author.company}, {author.occupation}</Typography>
+      <Typography variant='h5'>{author.name}</Typography>
+      <Typography variant='subtitle2'>{author.company}, {author.occupation}</Typography>
 
-      <Box display="flex" justifyContent="center" alignItems="center" gap={2}>
+      <Box display='flex' justifyContent='center' alignItems='center' gap={2}>
         <Link href={author.instagram ?? ''} passHref>
           <Instagram fontSize='medium' color='primary' />
         </Link>
@@ -34,4 +34,4 @@ export const AuthorData = ({ author }: { author: Author }) => {
       </Box>
     </Box>
   );
-}
+};

@@ -1,5 +1,5 @@
-import { PostFlatData, TagData } from "@/_components";
-import { getPostBySlug, getTagBySlug } from "@/_libs";
+import { PostFlatData, TagData } from '@/_components';
+import { getPostBySlug, getTagBySlug } from '@/_libs';
 
 export default function Page({ params: { slug } }: { params: { slug: string } }) {
   const tag = getTagBySlug(slug);

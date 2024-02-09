@@ -1,6 +1,6 @@
-import { ThemeOptions, createTheme } from "@mui/material"
-import { GlobalTheme } from "./globalTheme"
-import { grey } from "@mui/material/colors"
+import { ThemeOptions, createTheme } from '@mui/material';
+import { GlobalTheme } from './globalTheme';
+import { grey } from '@mui/material/colors';
 
 export const LightTheme = createTheme(GlobalTheme, {
   palette: {

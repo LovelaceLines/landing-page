@@ -1,9 +1,9 @@
-import { notFound } from "next/navigation";
-import { Metadata } from "next";
+import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 
-import { getAuthorBySlug, getPostBySlug, markdownToHtml } from "@/_libs";
-import { AuthorContent, AuthorData, PostsRecommended } from "@/_components";
-import { Params } from "@/_types";
+import { getAuthorBySlug, getPostBySlug, markdownToHtml } from '@/_libs';
+import { AuthorContent, AuthorData, PostsRecommended } from '@/_components';
+import { Params } from '@/_types';
 
 export async function generateMetadata({ params: { slug } }: Params): Promise<Metadata> {
   const post = fetchAuthor(slug);
@@ -18,7 +18,7 @@ export async function generateMetadata({ params: { slug } }: Params): Promise<Me
           url: post.coverImage,
           width: 500,
           height: 500,
-          alt: "Foto de " + post.name,
+          alt: 'Foto de ' + post.name,
         },
       ],
     },
@@ -26,13 +26,13 @@ export async function generateMetadata({ params: { slug } }: Params): Promise<Me
 }
 
 const fetchAuthor = (slug: string) => {
-  try { return getAuthorBySlug(slug) }
-  catch (error: unknown) { return notFound() }
-}
+  try { return getAuthorBySlug(slug); }
+  catch (error: unknown) { return notFound(); }
+};
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const author = fetchAuthor(params.slug);
-  author.content = await markdownToHtml(author.content || "");
+  author.content = await markdownToHtml(author.content || '');
   const postsRecommended = author.slugRecommendedArticles ?
     author.slugRecommendedArticles.map(slug => getPostBySlug(slug)) :
     [];

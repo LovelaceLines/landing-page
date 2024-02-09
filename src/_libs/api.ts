@@ -1,15 +1,15 @@
-import { Author, Post, Tag } from "@/_types";
-import fs from "fs";
-import matter from "gray-matter";
-import { join } from "path";
+import { Author, Post, Tag } from '@/_types';
+import fs from 'fs';
+import matter from 'gray-matter';
+import { join } from 'path';
 
-const postsDirectory = join(process.cwd(), "public/posts");
+const postsDirectory = join(process.cwd(), 'public/posts');
 const getPostSlugs = fs.readdirSync(postsDirectory);
 
 export function getPostBySlug(slug: string): Post {
-  const realSlug = slug.replace(/\.md$/, "");
+  const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, slug, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
   return { ...data, slug: realSlug, content } as Post;
@@ -25,13 +25,13 @@ export function getAllPosts(page: number = 0, limit: number = Number.MAX_SAFE_IN
   return posts;
 }
 
-const authorsDirectory = join(process.cwd(), "public/authors");
+const authorsDirectory = join(process.cwd(), 'public/authors');
 const getAuthorSlugs = fs.readdirSync(authorsDirectory);
 
 export function getAuthorBySlug(slug: string): Author {
-  const realSlug = slug.replace(/\.md$/, "");
+  const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(authorsDirectory, slug, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
   return { ...data, slug: realSlug, content } as Author;
@@ -47,13 +47,13 @@ export function getAllAuthors(page: number = 0, limit: number = Number.MAX_SAFE_
   return authors;
 }
 
-const tagsDirectory = join(process.cwd(), "public/tags");
+const tagsDirectory = join(process.cwd(), 'public/tags');
 const getTagSlugs = fs.readdirSync(tagsDirectory);
 
 export function getTagBySlug(slug: string): Tag {
-  const realSlug = slug.replace(/\.md$/, "");
+  const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(tagsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data } = matter(fileContents);
 
   return { ...data, slug: realSlug } as Tag;

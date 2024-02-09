@@ -1,5 +1,5 @@
-import { remark } from "remark";
-import html from "remark-html";
+import { remark } from 'remark';
+import html from 'remark-html';
 import { rehype } from 'rehype';
 import rehypeSlug from 'rehype-slug';
 

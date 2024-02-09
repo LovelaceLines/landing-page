@@ -1,5 +1,5 @@
-import { Feed } from "@/_types";
-import env from "@/env";
+import { Feed } from '@/_types';
+import env from '@/env';
 
 export const getFeed = async (): Promise<Feed[]> => {
   try {
@@ -9,4 +9,4 @@ export const getFeed = async (): Promise<Feed[]> => {
   } catch {
     return [];
   }
-}
+};

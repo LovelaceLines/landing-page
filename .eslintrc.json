@@ -19,6 +19,14 @@
     "react"
   ],
   "rules": {
+    "semi": [
+      "warn",
+      "always"
+    ],
+    "quotes": [
+      "warn",
+      "single"
+    ],
     "no-empty": "warn",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",

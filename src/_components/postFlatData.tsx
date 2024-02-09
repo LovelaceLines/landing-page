@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { Box, Container, Typography } from "@mui/material";
-import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
+import Link from 'next/link';
+import { Box, Container, Typography } from '@mui/material';
+import { format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 
-import { Post } from "@/_types";
+import { Post } from '@/_types';
 
 export const PostFlatData = ({ post }: { post: Post }) => {
   return (
@@ -19,4 +19,4 @@ export const PostFlatData = ({ post }: { post: Post }) => {
       </Box>
     </Container>
   );
-}
+};

@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { Box, Chip, Container, Typography } from "@mui/material";
+import Image from 'next/image';
+import { Box, Chip, Container, Typography } from '@mui/material';
 import { format } from 'date-fns';
-import { ptBR } from "date-fns/locale";
-import { Author, Post } from "@/_types";
-import { AuthorLinkCard } from "@/_components";
-import Link from "next/link";
+import { ptBR } from 'date-fns/locale';
+import { Author, Post } from '@/_types';
+import { AuthorLinkCard } from '@/_components';
+import Link from 'next/link';
 
 export const PostData = ({ post, authors }: { post: Post, authors: Author[] }) => {
   return (

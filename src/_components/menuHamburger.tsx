@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from "react";
-import { Box, IconButton, Menu, MenuItem } from "@mui/material";
+import { useState } from 'react';
+import { Box, IconButton, Menu, MenuItem } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 
-import { navLinks } from "@/_data";
-import Link from "next/link";
+import { navLinks } from '@/_data';
+import Link from 'next/link';
 
 export const MenuHamburger = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);

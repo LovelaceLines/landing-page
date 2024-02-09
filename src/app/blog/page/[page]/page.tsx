@@ -1,7 +1,7 @@
-import { Box } from "@mui/material";
-import { Pagination, PostFlatData } from "@/_components";
+import { Box } from '@mui/material';
+import { Pagination, PostFlatData } from '@/_components';
 
-import { getAllPosts } from "@/_libs";
+import { getAllPosts } from '@/_libs';
 
 export default function Page({ params: { page } }: { params: { page: number } }) {
   const posts = getAllPosts(page, 2);
@@ -11,7 +11,7 @@ export default function Page({ params: { page } }: { params: { page: number } })
       {posts.map((post) => (
         <PostFlatData key={post.slug} post={post} />
       ))}
-      <Pagination params={{ slug: "blog", page: page }} />
+      <Pagination params={{ slug: 'blog', page: page }} />
     </Box>
   );
 }

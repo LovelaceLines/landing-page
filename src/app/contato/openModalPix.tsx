@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import { IconButton, Typography } from "@mui/material";
-import { Pix } from "@mui/icons-material";
+import { useState } from 'react';
+import Image from 'next/image';
+import { IconButton, Typography } from '@mui/material';
+import { Pix } from '@mui/icons-material';
 
-import { ModalBase } from "@/_templates";
+import { ModalBase } from '@/_templates';
 
 export const OpenModalPix = () => {
   const [open, setOpen] = useState(false);
@@ -27,4 +27,4 @@ export const OpenModalPix = () => {
       </ModalBase>
     </>
   );
-}
+};

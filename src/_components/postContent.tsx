@@ -1,6 +1,6 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container } from '@mui/material';
 
-import { ContentStyles } from "@/_styles";
+import { ContentStyles } from '@/_styles';
 
 export const PostContent = ({ content }: { content: string }) => {
   return (

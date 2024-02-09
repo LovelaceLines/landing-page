@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container } from '@mui/material';
 
 export interface PageContentBaseProps {
   children: React.ReactNode;
@@ -14,4 +14,4 @@ export const PageContentBase = ({ children, sx, maxWidth = 'lg' }: PageContentBa
       </Container>
     </Box>
   );
-}
+};

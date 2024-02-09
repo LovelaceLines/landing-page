@@ -1,4 +1,4 @@
-import { Box, Modal } from "@mui/material";
+import { Box, Modal } from '@mui/material';
 
 interface PageContentBaseProps {
   children: React.ReactNode;
@@ -25,4 +25,4 @@ export const ModalBase = ({ children, open, onClose }: PageContentBaseProps) => 
       </Box>
     </Modal>
   );
-}
+};
