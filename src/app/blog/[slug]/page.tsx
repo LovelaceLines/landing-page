@@ -12,6 +12,7 @@ export async function generateMetadata({ params: { slug } }: Params): Promise<Me
     title: post.title,
     description: post.excerpt.substring(0, 160),
     abstract: post.excerpt.substring(0, 160),
+    authors: [...post.slugAuthors.map(author => { return { name: getAuthorBySlug(author).name, url: getAuthorBySlug(author).instagram } })],
     category: "Blog de Desenvolvimento de Software" + (post.tags ? ` - ${post.tags.join(", ")}` : ""),
     openGraph: {
       images: [

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Providers from "./providers";
+import env from "@/env";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://loveacelines.com"),
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   },
   description: "Conheça a Lovelace Lines e descubra como podemos lhe ajudar a alcançar seus objetivos!",
   applicationName: "Lovelace Lines",
-  authors: [{ name: "George Maia", url: "https://instagram.com/srma.ia" }],
+  authors: [{ name: "Lovelace Lines", url: env.INSTAGRAM_PROFILE }],
   keywords: ["Lovelace Lines", "Desenvolvimento de Software", "Contratação", "DotNet", "React", "NextJS", "NodeJS", "C#", "CSharp",
     "JavaScript", "TypeScript", "HTML", "CSS", "Sass", "SCSS", "MaterialUI", "MUI", "Figma", "UI/UX", "User Interface", "User Experience",
     "Design", "Frontend", "Backend", "Fullstack", "Fullstack Developer", "Blog", "Artigos", "Tutoriais", "Dicas", "Truques", "Código"],

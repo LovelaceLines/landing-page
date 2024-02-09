@@ -5,11 +5,12 @@ import { GitHub, LinkedIn, Instagram } from '@mui/icons-material';
 
 import { MenuHamburger, ToggleThemeIcon } from '@/_components';
 import { navLinks } from '@/_data';
+import env from '@/env';
 
 const socialLinks = [
-  { href: 'https://www.linkedin.com/in/lovelacelines/', icon: <LinkedIn /> },
-  { href: 'https://www.instagram.com/lovelacelines/', icon: <Instagram /> },
-  { href: 'https://github.com/LovelaceLines', icon: <GitHub /> },
+  { href: env.LINKEDIN_PROFILE, icon: <LinkedIn /> },
+  { href: env.INSTAGRAM_PROFILE, icon: <Instagram /> },
+  { href: env.GITHUB_PROFILE, icon: <GitHub /> },
 ];
 
 export const MenuAppBar = () => {

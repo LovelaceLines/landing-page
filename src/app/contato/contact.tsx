@@ -3,6 +3,7 @@ import { WhatsApp, Instagram, Email, LinkedIn, GitHub } from '@mui/icons-materia
 
 import { PageContentBase } from '@/_templates';
 import { OpenModalPix } from './openModalPix';
+import env from '@/env';
 
 export const Contact = () => {
   return (
@@ -20,19 +21,19 @@ export const Contact = () => {
           <Typography>Junte-se à nossa comunidade acolhedora de desenvolvedores, onde tanto novatos quanto veteranos são bem-vindos! Com expertise em tecnologias como React e .Net, oferecemos um ambiente amigável para aprender, crescer e contribuir. Na Lovelace Lines, acreditamos na democratização do conhecimento e no apoio mútuo. Venha se juntar a nós para aprimorar suas habilidades e enfrentar novos desafios - estamos ansiosos para recebê-lo!</Typography>
         </Box>
         <Box>
-          <IconButton href='https://wa.me/558892465315' target='_blank' rel='noreferrer' size='large'>
+          <IconButton href={`https://wa.me/${env.WHATSAPP_NUMBER}`} target='_blank' rel='noreferrer' size='large'>
             <WhatsApp color='primary' fontSize='large' />
           </IconButton>
-          <IconButton href='https://instagram.com/lovelacelines' target='_blank' rel='noreferrer' size='large'>
+          <IconButton href={env.INSTAGRAM_PROFILE} target='_blank' rel='noreferrer' size='large'>
             <Instagram color='primary' fontSize='large' />
           </IconButton>
-          <IconButton href='mailto:lovelacelines@gmail.com' target='_blank' rel='noreferrer' size='large'>
+          <IconButton href={`mailto:${env.EMAIL}`} target='_blank' rel='noreferrer' size='large'>
             <Email color='primary' fontSize='large' />
           </IconButton>
-          <IconButton href='https://www.linkedin.com/in/lovelacelines/' target='_blank' rel='noreferrer' size='large'>
+          <IconButton href={env.LINKEDIN_PROFILE} target='_blank' rel='noreferrer' size='large'>
             <LinkedIn color='primary' fontSize='large' />
           </IconButton>
-          <IconButton href='https://github.com/LovelaceLines' target='_blank' rel='noreferrer' size='large'>
+          <IconButton href={env.GITHUB_PROFILE} target='_blank' rel='noreferrer' size='large'>
             <GitHub color='primary' fontSize='large' />
           </IconButton>
         </Box>

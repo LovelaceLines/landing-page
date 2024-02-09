@@ -6,6 +6,7 @@ import { Feed } from '@/_types';
 import { getFeed } from '@/_libs';
 import { PageContentBase } from '@/_templates';
 import { colors } from '@/_theme';
+import env from '@/env';
 
 export const InstagramFeed = async () => {
   const feed = await getFeed() ?? [];
@@ -58,7 +59,7 @@ export const InstagramFeed = async () => {
         <Box display='flex' flexDirection='column' gap={4}>
           <Typography variant="h4">
             Também estamos presente no {' '}
-            <Link href='https://www.instagram.com/lovelacelines/' target='_blank' rel='noreferrer' style={{ color: `${colors.primary}` }}>
+            <Link href={env.INSTAGRAM_PROFILE} target='_blank' rel='noreferrer' style={{ color: `${colors.primary}` }}>
               Instagram
             </Link>
           </Typography>
