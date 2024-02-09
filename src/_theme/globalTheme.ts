@@ -1,14 +1,16 @@
 import { ThemeOptions, createTheme } from '@mui/material';
-import { pink, amber, grey } from '@mui/material/colors';
+import { grey } from '@mui/material/colors';
+
+import { colors } from './colors';
 
 export const GlobalTheme = createTheme({
   palette: {
     primary: {
-      main: pink.A400,
+      main: colors.primary,
       contrastText: grey[50],
     },
     secondary: {
-      main: amber[500],
+      main: colors.secondary,
       contrastText: grey[800],
     },
   },
