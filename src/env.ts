@@ -1,6 +1,7 @@
 import { z } from 'zod';
 
 const envSchema = z.object({
+  APP_URL: z.string().default('http://localhost:3000'),
   INSTAGRAM_TOKEN: z.string().optional().default(''),
   HOURS_REVALIDARE: z.string().default('24').transform(Number),
   NODE_ENV: z.string().default('development'),

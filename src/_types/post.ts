@@ -9,7 +9,13 @@ export type Post = {
   layout: string;
   slug: string;
   slugRecommendedArticles?: string[];
+  summary: Summary[];
   content: string;
+};
+
+export type Summary = {
+  id: string;
+  title: string;
 };
 
 export type Project = {

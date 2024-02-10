@@ -1,10 +1,16 @@
-import { Box, Container } from '@mui/material';
+import { Box, Breakpoint, Container, SxProps, Theme } from '@mui/material';
 
 import { ContentStyles } from '@/_styles';
 
-export const PostContent = ({ content }: { content: string }) => {
+interface PostContentProps {
+  content: string;
+  maxWidth?: false | Breakpoint | undefined
+  sx?: SxProps<Theme> | undefined
+}
+
+export const PostContent = ({ content, maxWidth = 'sm', sx = undefined }: PostContentProps) => {
   return (
-    <Container maxWidth='sm' disableGutters>
+    <Container maxWidth={maxWidth} disableGutters sx={sx}>
       <Box
         sx={ContentStyles}
         dangerouslySetInnerHTML={{ __html: content }}

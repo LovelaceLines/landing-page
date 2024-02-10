@@ -14,6 +14,10 @@ describe('getPostBySlug', () => {
       layout: 'default',
       slug: 'hello-world',
       slugRecommendedArticles: ['explorando-o-mundo-das-frutas-mais-saborosas', 'reportagem-especial-jornada-da-harmonia-na-natureza', 'reportagem-especial-descubra-os-melhores-companheiros-para-a-caca'],
+      sumary: [
+        { title: 'Lorem Ipsum 1', id: 'lorem-ipsum-1' },
+        { title: 'Lorem Ipsum 2', id: 'lorem-ipsum-2' },
+      ],
       content: '',
     };
 

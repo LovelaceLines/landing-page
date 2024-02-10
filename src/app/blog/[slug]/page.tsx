@@ -1,9 +1,14 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { Box, Typography } from '@mui/material';
 
-import { PostData, PostContent, PostsRecommended } from '@/_components';
+import Link from 'next/link';
+import { Facebook, LinkedIn, WhatsApp, X } from '@mui/icons-material';
+
+import { PostData, PostContent, PostsRecommended, ContentSummary, AuthorLinkCard } from '@/_components';
 import { getAuthorBySlug, getPostBySlug, markdownToHtml } from '@/_libs';
 import { Params } from '@/_types';
+import env from '@/env';
 
 export async function generateMetadata({ params: { slug } }: Params): Promise<Metadata> {
   const post = fetchPost(slug);
@@ -40,10 +45,53 @@ export default async function Page({ params }: Params) {
     post.slugRecommendedArticles.map(slug => getPostBySlug(slug)) :
     [];
 
+  const AuthorsSection = () => (
+    <>
+      <Typography variant='h6'>Autores:</Typography>
+      <Box display='flex' flexDirection='column' gap={2}>
+        {authors.map(author =>
+          <AuthorLinkCard key={author.slug} author={author} />)}
+      </Box>
+    </>
+  );
+
+  const SharePost = () => (
+    <Box display='flex' flexDirection='column' gap={2}>
+      <Typography variant='h6'>Compartilhe:</Typography>
+      <Box display='flex' gap={2}>
+        <Link href={`https://www.linkedin.com/shareArticle?mini=true&url=${env.APP_URL}/blog/${post.slug}&title=${post.title}`} rel='noopener noreferrer' target='_blank' style={{ color: 'inherit' }}>
+          <LinkedIn fontSize='large' />
+        </Link>
+        <Link href={`https://twitter.com/intent/tweet?text=${post.title}&url=${env.APP_URL}/blog/${post.slug}`} rel='noopener noreferrer' target='_blank' style={{ color: 'inherit' }}>
+          <X fontSize='large' />
+        </Link>
+        <Link href={`whatsapp://send?text=${post.title} ${env.APP_URL}/blog/${post.slug}`} rel='noopener noreferrer' target='_blank' style={{ color: 'inherit' }}>
+          <WhatsApp fontSize='large' />
+        </Link>
+        <Link href={`https://www.facebook.com/sharer/sharer.php?u=${env.APP_URL}/blog/${post.slug}`} rel='noopener noreferrer' target='_blank' style={{ color: 'inherit' }}>
+          <Facebook fontSize='large' />
+        </Link>
+      </Box>
+    </Box>
+  );
+
+  const SideContent = () => (
+    <Box display='flex' flexDirection='column' gap={2} sx={{ paddingTop: 2 }} >
+      <ContentSummary summary={post.summary} />
+      <AuthorsSection />
+      <SharePost />
+    </Box>
+  );
+
   return (
     <>
-      <PostData post={post} authors={authors} />
-      <PostContent content={post.content} />
+      <PostData post={post} />
+
+      <Box display='flex' gap={4} flexDirection={{ xs: 'column', md: 'row' }} sx={{ width: { xs: 'auto', sm: 'max-content' }, mx: 'auto' }}>
+        <SideContent />
+        <PostContent content={post.content} />
+      </Box >
+
       <PostsRecommended posts={postsRecommended} />
     </>
   );
