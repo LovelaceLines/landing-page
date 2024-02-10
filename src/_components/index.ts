@@ -14,3 +14,4 @@ export { Pagination } from './pagination';
 export { ToggleThemeIcon } from './toggleThemeIcon';
 export { MenuHamburger } from './menuHamburger';
 export { ContentSummary } from './contentSummary';
+export { PrevNextPage } from './prevNextPage';
