@@ -7,6 +7,8 @@ date: "2020-06-16T05:35:07.322Z"
 lastmod: "2020-03-16T05:35:07.322Z"
 slugAuthors: ["gaviao", "capivara"]
 layout: default
+nextPost: 'reportagem-especial-jornada-da-harmonia-na-natureza'
+prevPost: 'explorando-o-mundo-das-frutas-mais-saborosas'
 slugRecommendedArticles: ["explorando-o-mundo-das-frutas-mais-saborosas", "reportagem-especial-jornada-da-harmonia-na-natureza", "reportagem-especial-descubra-os-melhores-companheiros-para-a-caca"]
 summary: [
   {

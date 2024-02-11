@@ -8,6 +8,8 @@ export type Post = {
   slugAuthors: string[];
   layout: string;
   slug: string;
+  nextPost?: string;
+  prevPost?: string;
   slugRecommendedArticles?: string[];
   summary: Summary[];
   content: string;
