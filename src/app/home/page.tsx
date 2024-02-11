@@ -9,9 +9,9 @@ export default function Home() {
     <>
       <Welcome />
       <About />
-      <InstagramFeed />
       <Projects />
       <Process />
+      <InstagramFeed />
     </>
   );
 }
