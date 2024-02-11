@@ -23,10 +23,10 @@ export const AppThemeProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme />
       <ThemeContext.Provider value={{ themeName, toggleTheme }}>
-        <Box sx={{ maxHeight: '100vh', overflowY: 'auto', '::-webkit-scrollbar': { display: 'none' } }}>
+        <Box>
           {children}
         </Box>
       </ThemeContext.Provider>
-    </ThemeProvider>
+    </ThemeProvider >
   );
 };

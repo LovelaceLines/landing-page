@@ -87,7 +87,7 @@ export default async function Page({ params }: Params) {
     <Box display='flex' flexDirection='column' alignItems='center'>
       <PostData post={post} />
 
-      <Box display='flex' gap={4} flexDirection={{ xs: 'column', md: 'row' }} sx={{ width: { xs: 'auto', sm: 'max-content' }, mx: 'auto' }}>
+      <Box display='flex' flexDirection={{ xs: 'column', md: 'row' }} justifySelf='center' sx={{ width: '-webkit-fill-available' }}>
         <SideContent />
         <PostContent content={post.content} />
       </Box >
