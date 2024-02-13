@@ -40,6 +40,8 @@ const fetchPost = (slug: string) => {
 export default async function Page({ params }: Params) {
   const post = fetchPost(params.slug);
   post.content = await markdownToHtml(post.content || '');
+  const prevPost = post.prevPost ? getPostBySlug(post.prevPost) : undefined;
+  const nextPost = post.nextPost ? getPostBySlug(post.nextPost) : undefined;
   const authors = post.slugAuthors.map(author => getAuthorBySlug(author));
   const postsRecommended = post.slugRecommendedArticles ?
     post.slugRecommendedArticles.map(slug => getPostBySlug(slug)) :
@@ -92,7 +94,7 @@ export default async function Page({ params }: Params) {
         <PostContent content={post.content} />
       </Box >
 
-      <PrevNextPage prev={post.prevPost || ''} next={post.nextPost || ''} />
+      <PrevNextPage prevPost={prevPost} nextPost={nextPost} />
 
       <PostsRecommended posts={postsRecommended} />
     </Box>
