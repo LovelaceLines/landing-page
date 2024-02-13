@@ -11,7 +11,7 @@ export const LightTheme = createTheme(GlobalTheme, {
     },
     text: {
       primary: grey[800],
-      secondary: grey[50],
+      secondary: grey[900],
       disabled: grey[400],
     }
   }

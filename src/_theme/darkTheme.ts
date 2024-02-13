@@ -11,7 +11,7 @@ export const DarkTheme = createTheme(GlobalTheme, {
     },
     text: {
       primary: grey[50],
-      secondary: grey[800],
+      secondary: grey[100],
       disabled: grey[400],
     }
   }
