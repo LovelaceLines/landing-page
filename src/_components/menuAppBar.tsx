@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { AppBar, Box, Button, Container, IconButton, Toolbar } from '@mui/material';
-import { GitHub, LinkedIn, Instagram } from '@mui/icons-material';
+import { GitHub, LinkedIn, Instagram, Search } from '@mui/icons-material';
 
 import { MenuHamburger, ToggleThemeIcon } from '@/_components';
 import { navLinks } from '@/_data';
@@ -21,23 +21,29 @@ export const MenuAppBar = () => {
   );
 
   const NavigationLinks = () => (
-    <Box display='flex' flexDirection='row'>
-      {navLinks.map(link =>
+    <>
+      {navLinks.filter(link => link.visible === 'always' || link.visible === 'desktop').map(link =>
         <Link key={link.href} href={link.href} style={{ textDecoration: 'none', color: 'inherit' }}>
           <Button color='inherit'>{link.text}</Button>
         </Link>
       )}
-    </Box>
+    </>
+  );
+
+  const SearchPost = () => (
+    <Link href='/blog/search' style={{ textDecoration: 'none', color: 'inherit' }}>
+      <IconButton color='inherit'><Search /></IconButton>
+    </Link>
   );
 
   const LinkSocialMedia = () => (
-    <Box display='flex' flexDirection='row'>
+    <>
       {socialLinks.map(link => (
         <Link key={link.href} href={link.href} target='_blank' rel='noreferrer' style={{ textDecoration: 'none', color: 'inherit' }}>
           <IconButton color='inherit'>{link.icon}</IconButton>
         </Link>
       ))}
-    </Box>
+    </>
   );
 
   return (
@@ -51,14 +57,15 @@ export const MenuAppBar = () => {
 
             <Box display='flex' gap={2}>
               <Logo />
-              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
                 <NavigationLinks />
               </Box>
             </Box>
 
             <Box display='flex' flexDirection='row'>
               <ToggleThemeIcon />
-              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+                <SearchPost />
                 <LinkSocialMedia />
               </Box>
             </Box>

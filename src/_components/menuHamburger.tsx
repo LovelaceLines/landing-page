@@ -1,11 +1,11 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { Box, IconButton, Menu, MenuItem } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 
 import { navLinks } from '@/_data';
-import Link from 'next/link';
 
 export const MenuHamburger = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -17,7 +17,7 @@ export const MenuHamburger = () => {
 
   const NavigationLinks = () => (
     <Box display='flex' flexDirection='column' >
-      {navLinks.map(link =>
+      {navLinks.filter(link => link.visible === 'always' || link.visible === 'mobile').map(link =>
         <Link key={link.href} href={link.href} style={{ textDecoration: 'none', color: 'inherit' }}>
           <MenuItem onClick={handleCloseNavMenu}>{link.text}</MenuItem>
         </Link>
