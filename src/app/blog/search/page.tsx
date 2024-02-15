@@ -1,10 +1,10 @@
 'use client';
 
+import Link from 'next/link';
 import React, { Suspense, useCallback, useState } from 'react';
 import { Box, Button, Grid, TextField, Typography } from '@mui/material';
 
 import { Post } from '@/_types';
-import Link from 'next/link';
 
 const queryResults = async (query: string) => {
   try {
