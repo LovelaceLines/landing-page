@@ -5,7 +5,7 @@ import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import { Facebook, LinkedIn, WhatsApp, X } from '@mui/icons-material';
 
-import { PostData, PostContent, PostsRecommended, ContentSummary, AuthorLinkCard, PrevNextPage } from '@/_components';
+import { PostData, PostContent, PostsRecommended, ContentSummary, AuthorLinkCard, PrevNextPage, RouterBack } from '@/_components';
 import { getAuthorBySlug, getPostBySlug, markdownToHtml } from '@/_libs';
 import { Params } from '@/_types';
 import env from '@/env';
@@ -86,7 +86,8 @@ export default async function Page({ params }: Params) {
   );
 
   return (
-    <Box display='flex' flexDirection='column' alignItems='center'>
+    <Box display='flex' flexDirection='column' alignItems='center' position='relative'>
+      <RouterBack />
       <PostData post={post} />
 
       <Box display='flex' flexDirection={{ xs: 'column', md: 'row' }} justifySelf='center' sx={{ width: '-webkit-fill-available' }}>
