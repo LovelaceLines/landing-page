@@ -4,6 +4,8 @@ import { Post } from '@/_types';
 import { PostFlatData } from '@/_components';
 
 export const PostsRecommended = ({ posts }: { posts: Post[] }) => {
+  if (!posts.length) return null;
+
   return (
     <Container maxWidth='md' disableGutters>
       <Typography variant='h6'>Recomendados:</Typography>
