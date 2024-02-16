@@ -40,6 +40,12 @@
       "@/_libs": [
         "./src/_libs/index.ts"
       ],
+      "@/_shared": [
+        "./src/_shared/index.ts"
+      ],
+      "@/_styles": [
+        "./src/_styles/index.ts"
+      ],
       "@/_templates": [
         "./src/_templates/index.ts"
       ],
@@ -48,9 +54,6 @@
       ],
       "@/_types": [
         "./src/_types/index.ts"
-      ],
-      "@/_styles": [
-        "./src/_styles/index.ts"
       ],
     }
   },

@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
+
 import { PostFlatData, TagData } from '@/_components';
 import { getPostBySlug, getTagBySlug } from '@/_libs';
+
+export const metadata: Metadata = {
+  title: 'Tag',
+};
 
 export default function Page({ params: { slug } }: { params: { slug: string } }) {
   const tag = getTagBySlug(slug);

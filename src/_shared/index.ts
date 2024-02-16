@@ -1,0 +1,1 @@
+export { openGraph, title } from './metadata';

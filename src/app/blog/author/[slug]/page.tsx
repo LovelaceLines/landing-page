@@ -4,25 +4,11 @@ import { Metadata } from 'next';
 import { getAuthorBySlug, getPostBySlug, markdownToHtml } from '@/_libs';
 import { AuthorContent, AuthorData, PostsRecommended } from '@/_components';
 import { Params } from '@/_types';
+import { metadata as baseMetadata } from './document';
 
 export async function generateMetadata({ params: { slug } }: Params): Promise<Metadata> {
-  const post = fetchAuthor(slug);
-
-  return {
-    title: post.name,
-    description: post.content.substring(0, 160),
-    abstract: post.content.substring(0, 160),
-    openGraph: {
-      images: [
-        {
-          url: post.coverImage,
-          width: 500,
-          height: 500,
-          alt: 'Foto de ' + post.name,
-        },
-      ],
-    },
-  } as Metadata;
+  const author = fetchAuthor(slug);
+  return baseMetadata(author);
 }
 
 const fetchAuthor = (slug: string) => {

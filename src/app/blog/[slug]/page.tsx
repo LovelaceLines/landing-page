@@ -9,27 +9,12 @@ import { PostData, PostContent, PostsRecommended, ContentSummary, AuthorLinkCard
 import { getAuthorBySlug, getPostBySlug, markdownToHtml } from '@/_libs';
 import { Params } from '@/_types';
 import env from '@/env';
+import { metadata as baseMetadata } from './document';
 
 export async function generateMetadata({ params: { slug } }: Params): Promise<Metadata> {
   const post = fetchPost(slug);
-
-  return {
-    title: post.title,
-    description: post.excerpt.substring(0, 160),
-    abstract: post.excerpt.substring(0, 160),
-    authors: [...post.slugAuthors.map(author => { return { name: getAuthorBySlug(author).name, url: getAuthorBySlug(author).instagram } })],
-    category: 'Blog de Desenvolvimento de Software' + (post.tags ? ` - ${post.tags.join(', ')}` : ''),
-    openGraph: {
-      images: [
-        {
-          url: post.coverImage,
-          width: 500,
-          height: 500,
-          alt: post.title,
-        },
-      ],
-    },
-  } as Metadata;
+  const authors = post.slugAuthors.map(author => getAuthorBySlug(author));
+  return baseMetadata(post, authors);
 }
 
 const fetchPost = (slug: string) => {
