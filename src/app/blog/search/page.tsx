@@ -20,9 +20,15 @@ export default function Page() {
   const handleSubmit = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!query) return;
-    setPosts(await queryResults(query));
+    if (query) setPosts(await queryResults(query));
   }, [query]);
+
+  const handleKeyUp = useCallback((event: React.KeyboardEvent<HTMLDivElement>) => {
+    switch (event.key) {
+      case 'Enter': return handleSubmit(event);
+      case 'Escape': return setQuery('');
+    }
+  }, [handleSubmit]);
 
   return (
     <Suspense>
@@ -35,6 +41,7 @@ export default function Page() {
               variant='outlined'
               value={query}
               onChange={(e) => setQuery(e.target.value)}
+              onKeyUp={handleKeyUp}
             />
           </Grid>
           <Grid item xs={12} sm={2}>
