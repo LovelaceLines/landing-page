@@ -10,13 +10,13 @@ interface ContentSummaryProps {
   sx?: SxProps<Theme> | undefined
 }
 
-export const ContentSummary = ({ summary, sliceTitle = 35, sx = undefined }: ContentSummaryProps) => {
+export const ContentSummary = ({ summary, sliceTitle = 30, sx = undefined }: ContentSummaryProps) => {
   return (
     <Box display={summary ? 'flex' : 'none'} flexDirection='column' sx={sx}>
-      <Typography variant='h6' gutterBottom>Sumário:</Typography>
+      <Typography variant='subtitle1' gutterBottom>Sumário:</Typography>
       {summary && summary.map((item, id) => (
         <Link key={id} href={`#${item.id}`} style={{ color: `${colors.primary}` }}>
-          <Typography variant='body1' gutterBottom noWrap>
+          <Typography gutterBottom noWrap>
             {item.title.slice(0, sliceTitle) + (item.title.length > sliceTitle ? '...' : '')}
           </Typography>
         </Link>

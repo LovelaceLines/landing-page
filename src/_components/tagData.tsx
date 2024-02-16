@@ -7,7 +7,7 @@ export const TagData = ({ tag }: { tag: Tag }) => {
   return (
     <Box>
       <Link href={`/blog/tag/${tag.slug}`} style={{ color: 'inherit' }}>
-        <Typography variant='h6' color='primary'>{tag.title}</Typography>
+        <Typography variant='subtitle2'>{tag.title}</Typography>
       </Link>
     </Box>
   );

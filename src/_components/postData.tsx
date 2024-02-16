@@ -17,7 +17,7 @@ export const PostData = ({ post }: { post: Post }) => {
             </Link>)}
         </Box>
 
-        <Typography variant='h4' align='center' >{post.title}</Typography>
+        <Typography variant='h5' align='center' >{post.title}</Typography>
 
         <Typography variant='subtitle2' align='center'>{
           format(new Date(post.date), "dd 'de' MMM, yyyy", { locale: ptBR })}

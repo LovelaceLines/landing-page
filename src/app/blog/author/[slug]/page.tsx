@@ -35,13 +35,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
   author.content = await markdownToHtml(author.content || '');
   const postsRecommended = author.slugRecommendedArticles ?
     author.slugRecommendedArticles.map(slug => getPostBySlug(slug)) :
-    [];
+    null;
 
   return (
     <>
       <AuthorData author={author} />
       <AuthorContent content={author.content} />
-      <PostsRecommended posts={postsRecommended} />
+      {postsRecommended && <PostsRecommended posts={postsRecommended} />}
     </>
   );
 }
