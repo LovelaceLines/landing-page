@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from '@mui/material';
 
 import { IProjectCardProps, ProjectCard } from '@/_components';
 import { PageContentBase } from '@/_templates';
+import Image from 'next/image';
 
 const projectCardProps: IProjectCardProps[] = [
   {
@@ -27,9 +28,10 @@ const projectCardProps: IProjectCardProps[] = [
 
 export const Projects = () => {
   return (
-    <PageContentBase>
+    <PageContentBase sx={{ position: 'relative' }}>
+      <Image src='/memphis/bubble-1.svg' alt='Bubble' width={1} height={1} style={{ width: '-webkit-fill-available', height: 'auto', position: 'absolute', top: 300, left: 0, zIndex: -1 }} />
       <Box display='flex' flexDirection='column' rowGap={4}>
-        <Typography variant="h4">Nossas últimas <strong>soluções</strong></Typography>
+        <Typography variant='h4'>Nossas últimas <strong>soluções</strong></Typography>
         <Grid container spacing={6}>
           {projectCardProps.map((props, index) => (
             <Grid item xs={12} sm={6} md={6} key={index}>

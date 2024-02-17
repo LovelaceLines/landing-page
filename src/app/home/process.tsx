@@ -69,9 +69,10 @@ export const Process = () => {
   const Texts = () => (
     <>
       <Typography variant='h4' color='secondary.contrastText'>Nosso processo de desenvolvimento</Typography>
+      <Typography align='justify' color='secondary.contrastText'>Na Lovelace Lines, acreditamos que a melhor forma de desenvolver um produto é <strong>entendendo as suas necessidades</strong> e trabalhando em conjunto com ele para <strong>criar soluções personalizadas e eficientes</strong>, visando sempre superar suas expectativas. Por isso, nosso processo de desenvolvimento é baseado em <strong>colaboração</strong>, <strong>prototipação</strong>, <strong>incrementos</strong> e <strong>entrega contínua</strong>.</Typography>
       <Typography align='justify' color='secondary.contrastText'>Conosco, durante todo o processo de desenvolvimento, o <strong>cliente é um pilar essencial</strong> para o resultado correto do produto, participando das reuniões e aprovando os protótipos. Desse modo, garantimos a solução que ele <strong>necessita</strong>!</Typography>
       <Typography align='justify' color='secondary.contrastText'>Além disso, para evitar longos períodos de espera, entregamos o produto por partes (incrementos) capazes de <strong>resolver</strong> um problema enquanto desenvolvemos evoluções e novas funcionalidades para aprimorar a experiencia do usuário.</Typography>
-      <Typography align='justify' color='secondary.contrastText'>Gostou do nosso processo? Que tal <Link href='/contato' style={{ color: `${colors.primary}` }}>entrar em contato conosco</Link> e conhecer mais sobre o que podemos fazer por você?</Typography>
+      <Typography align='justify' color='secondary.contrastText'>Gostou do nosso processo? Que tal <Link href='/home#contato' style={{ color: `${colors.primary}` }}>entrar em contato conosco</Link> e conhecer mais sobre o que podemos fazer por você?</Typography>
     </>
   );
 

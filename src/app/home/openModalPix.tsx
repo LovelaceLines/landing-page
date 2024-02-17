@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { IconButton, Typography } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
 import { Pix } from '@mui/icons-material';
 
 import { ModalBase } from '@/_templates';
@@ -14,7 +14,7 @@ export const OpenModalPix = () => {
   const handleClose = () => setOpen(false);
 
   return (
-    <>
+    <Box>
       <IconButton onClick={handleOpen} size='large'>
         <Pix color='primary' fontSize='large' />
       </IconButton>
@@ -25,6 +25,6 @@ export const OpenModalPix = () => {
         <br />
         <Typography>Chave Pix: +55 (88) 99246-5315</Typography>
       </ModalBase>
-    </>
+    </Box>
   );
 };

@@ -1,12 +1,14 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Box, Typography } from '@mui/material';
 
 import { PageContentBase } from '@/_templates';
+import { colors } from '@/_theme';
 
 export const About = () => {
   const Texts = () => (
     <Box display='flex' flexDirection='column' gap={4}>
-      <Typography variant="h4">Quem somos?</Typography>
+      <Typography variant='h4'>Quem somos?</Typography>
       <Box display='flex' flexDirection='column' gap={1}>
         <Typography align='justify'>
           Tudo começou com um desafio simples na jornada do Lovelace Lines: reunir jovens desenvolvedores para recriar um aplicativo existente, tornando-o numa experiência de aprendizado e crescimento. Esse pequeno desafio logo se transformou em algo mais significativo: a chance de resolver problemas reais e causar um impacto.
@@ -20,16 +22,19 @@ export const About = () => {
         <Typography align='justify'>
           Em relação ao futuro, nós do Lovelace Lines temos o objetivo de alcançar e envolver outros desenvolvedores através de plataformas como Instagram, LinkedIn e Youtube. Queremos compartilhar o que sabemos, aprender com a comunidade de desenvolvimento e, ao mesmo tempo, expandir nossa equipe, atraindo mais talentos para fortalecer nosso projeto e aumentar o impacto positivo do nosso trabalho. Estamos determinados a construir algo duradouro e valioso.
         </Typography>
+        <Typography align='justify'>
+          <Link href='home#contato' style={{ color: `${colors.primary}` }}>Junte-se à nossa comunidade</Link> acolhedora de desenvolvedores, onde tanto novatos quanto veteranos são bem-vindos! Com expertise em tecnologias como React e .Net, oferecemos um ambiente amigável para aprender, crescer e contribuir. Na Lovelace Lines, acreditamos na democratização do conhecimento e no apoio mútuo. Venha se juntar a nós para aprimorar suas habilidades e enfrentar novos desafios - estamos ansiosos para recebê-lo!
+        </Typography>
       </Box>
     </Box>
   );
 
   return (
     <PageContentBase sx={{ paddingBottom: 0 }}>
-      <Box id="sobre" display='flex' justifyContent='space-between' alignItems='center' gap={2}>
+      <Box id='sobre' display='flex' justifyContent='space-between' alignItems='center' gap={2}>
         <Texts />
         <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-          <Image src='https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt="Imagem ilustrativa" width={768} height={1024} style={{ width: '500px', height: 'auto', objectFit: 'cover' }} />
+          <Image src='https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt='Imagem ilustrativa' width={768} height={1024} style={{ width: '500px', height: 'auto', objectFit: 'cover' }} />
         </Box>
       </Box>
     </PageContentBase>
