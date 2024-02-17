@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
