@@ -1,7 +1,7 @@
 ---
 title: "🐱🔍 Mistério Felino: Gato com Dupla Vida Deixa Duas Famílias em Choque! 🏠🏠"
 excerpt: "Um gato astuto é descoberto levando uma vida dupla entre duas famílias, deixando todos surpresos. As famílias lidam com a revelação, questionando sua lealdade e tentando entender seus hábitos misteriosos. Enquanto isso, compartilham as responsabilidades de cuidar do felino, enquanto seu comportamento continua a ser uma fonte de fascínio e intriga."
-tags: ["família", "traição"]
+tags: ["familia", "traição"]
 coverImage: "/posts/misterio-felino-gato-com-dupla-vida-deixa-duas-familias-em-choque/cover.jfif"
 date: "2024-02-16T10:35:07.322Z"
 lastmod: "2020-03-16T05:35:07.322Z"
