@@ -19,7 +19,7 @@ const fetchAuthor = async (slug: string) => {
 export default async function Page({ params }: { params: { slug: string } }) {
   const author = await fetchAuthor(params.slug);
   author.content = await markdownToHtmlBySlug(author.slug, 'author');
-  const postsRecommended = await getRecommendedPosts(author, undefined); // TODO: fix this type casting
+  const postsRecommended = await getRecommendedPosts(author);
 
   return (
     <>

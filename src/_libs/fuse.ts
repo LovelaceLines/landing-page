@@ -33,7 +33,7 @@ export const searchPosts = async (query: string) => {
   return fuse.search(query);
 };
 
-export async function getRecommendedPosts(author?: Author, post?: Post, limit: number = 3): Promise<Post[]> {
+export async function getRecommendedPosts(author?: Author, post?: Post & { authors: Author[] }, limit = 3) {
   if (!author && !post) throw new Error('post and author cannot be null at the same time');
 
   const fuse = await loadFuse();
