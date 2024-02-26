@@ -1,10 +1,12 @@
-import { Pagination, PostFlatData, TagList } from '@/_components';
-import { getAllPosts, getAllTags } from '@/_libs';
 import { Box, Container, Typography } from '@mui/material';
 
-export default function Blog() {
-  const allPosts = getAllPosts();
-  const tags = getAllTags();
+import { Pagination, PostFlatData, TagList } from '@/_components';
+import { getAllPosts, getAllTags } from '@/_libs';
+import env from '@/env';
+
+export default async function Blog() {
+  const allPosts = await getAllPosts(1, env.POSTS_PER_PAGE);
+  const tags = await getAllTags();
 
   return (
     <>

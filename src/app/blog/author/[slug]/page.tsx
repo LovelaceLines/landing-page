@@ -1,27 +1,25 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
-import { getAuthorBySlug, getPostBySlug, markdownToHtml } from '@/_libs';
+import { getAuthorBySlug, getRecommendedPosts, markdownToHtmlBySlug } from '@/_libs';
 import { AuthorContent, AuthorData, PostsRecommended } from '@/_components';
 import { Params } from '@/_types';
 import { metadata as baseMetadata } from './document';
 
 export async function generateMetadata({ params: { slug } }: Params): Promise<Metadata> {
-  const author = fetchAuthor(slug);
+  const author = await fetchAuthor(slug);
   return baseMetadata(author);
 }
 
-const fetchAuthor = (slug: string) => {
-  try { return getAuthorBySlug(slug); }
+const fetchAuthor = async (slug: string) => {
+  try { return await getAuthorBySlug(slug); }
   catch (error: unknown) { return notFound(); }
 };
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const author = fetchAuthor(params.slug);
-  author.content = await markdownToHtml(author.content || '');
-  const postsRecommended = author.slugRecommendedArticles ?
-    author.slugRecommendedArticles.map(slug => getPostBySlug(slug)) :
-    null;
+  const author = await fetchAuthor(params.slug);
+  author.content = await markdownToHtmlBySlug(author.slug, 'author');
+  const postsRecommended = await getRecommendedPosts(author, undefined); // TODO: fix this type casting
 
   return (
     <>

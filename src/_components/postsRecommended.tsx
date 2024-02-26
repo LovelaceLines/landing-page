@@ -1,6 +1,6 @@
 import { Container, Typography } from '@mui/material';
 
-import { Post } from '@/_types';
+import { Post } from '@prisma/client';
 import { PostFlatData } from '@/_components';
 
 export const PostsRecommended = ({ posts }: { posts: Post[] }) => {

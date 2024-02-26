@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 
-import { Tag } from '@/_types';
+import { Tag } from '@prisma/client';
 import { TagData } from '@/_components';
 
 export const TagList = ({ tags }: { tags: Tag[] }) => {

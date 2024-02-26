@@ -1,17 +1,3 @@
----
-name: Tartaruga
-avatar: "/authors/tartaruga/avatar.jfif"
-coverImage: "/authors/tartaruga/cover.jfif"
-occupation: Escritor
-company: Blog Lovelace Lines
-email: tartaruga@email.com
-instagram: https://www.instagram.com/tartaruga
-twitter: https://twitter.com/tartaruga
-linkedin: https://www.linkedin.com/tartaruga
-github: https://github.com/tartaruga
-slugRecommendedArticles: ["extra-extra-duelo-epico-batida-entre-tartarugas-em-baixa-velocidade-sacode-a-comunidade", "misterio-felino-gato-com-dupla-vida-deixa-duas-familias-em-choque", "a-galinha-filosofa-e-o-conflito-existencial-quem-veio-primeiro-o-ovo-ou-a-galinha"]
----
-
 📰 Tito Tartaruga, o Repórter Intrépido das Ruas Movimentadas! 🌆
 
 Tito Tartaruga é mais do que um jornalista comum; ele é a voz lenta e constante que narra os altos e baixos da vida agitada da cidade. Com seu casco resistente e olhos atentos, Tito desliza pelas ruas movimentadas, capturando os acontecimentos mais quentes e as histórias mais emocionantes que ecoam pelas vielas e praças.

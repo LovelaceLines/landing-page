@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Box, Typography } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 
-import { Post } from '@/_types';
+import { Post } from '@prisma/client';
 
 interface PrevNextPageProps {
   prevPost?: Post,

@@ -6,31 +6,29 @@ import { Box, Typography } from '@mui/material';
 import { Facebook, LinkedIn, WhatsApp, X } from '@mui/icons-material';
 
 import { PostData, PostContent, PostsRecommended, ContentSummary, AuthorLinkCard, PrevNextPage, RouterBack } from '@/_components';
-import { getAuthorBySlug, getPostBySlug, markdownToHtml } from '@/_libs';
+import { getPostBySlug, getRecommendedPosts, markdownToHtmlBySlug } from '@/_libs';
 import { Params } from '@/_types';
 import env from '@/env';
 import { metadata as baseMetadata } from './document';
 
 export async function generateMetadata({ params: { slug } }: Params): Promise<Metadata> {
-  const post = fetchPost(slug);
-  const authors = post.slugAuthors.map(author => getAuthorBySlug(author));
+  const post = await fetchPost(slug);
+  const authors = post.authors;
   return baseMetadata(post, authors);
 }
 
-const fetchPost = (slug: string) => {
-  try { return getPostBySlug(slug); }
+const fetchPost = async (slug: string) => {
+  try { return await getPostBySlug(slug); }
   catch (error: unknown) { return notFound(); }
 };
 
 export default async function Page({ params }: Params) {
-  const post = fetchPost(params.slug);
-  post.content = await markdownToHtml(post.content || '');
-  const prevPost = post.prevPost ? getPostBySlug(post.prevPost) : undefined;
-  const nextPost = post.nextPost ? getPostBySlug(post.nextPost) : undefined;
-  const authors = post.slugAuthors.map(author => getAuthorBySlug(author));
-  const postsRecommended = post.slugRecommendedArticles ?
-    post.slugRecommendedArticles.map(slug => getPostBySlug(slug)) :
-    null;
+  const post = await fetchPost(params.slug);
+  post.content = await markdownToHtmlBySlug(post.slug, 'post');
+  const prevPost = post.prevPostId ? await getPostBySlug(post.prevPostId) : undefined;
+  const nextPost = post.nextPostId ? await getPostBySlug(post.nextPostId) : undefined;
+  const authors = post.authors;
+  const postsRecommended = await getRecommendedPosts(undefined, post);
 
   const AuthorsSection = () => (
     <>
@@ -64,7 +62,7 @@ export default async function Page({ params }: Params) {
 
   const SideContent = () => (
     <Box display='flex' flexDirection='column' gap={2} position={{ xs: 'static', lg: 'absolute' }} sx={{ paddingTop: 2 }} >
-      <ContentSummary summary={post.summary} />
+      <ContentSummary summary={post.summaries} />
       <AuthorsSection />
       <SharePost />
     </Box>

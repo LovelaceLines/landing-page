@@ -12,6 +12,7 @@ const envSchema = z.object({
   WHATSAPP_NUMBER: z.string(),
   PIX_KEY: z.string(),
   EMAIL: z.string(),
+  POSTS_PER_PAGE: z.string().default('5').transform(Number),
 });
 
 export default envSchema.parse(process.env);

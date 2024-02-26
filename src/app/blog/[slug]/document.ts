@@ -1,20 +1,20 @@
 import { Metadata } from 'next';
 
-import { Author, Post } from '@/_types';
 import { openGraph } from '@/_shared';
+import { Author, Post } from '@prisma/client';
 
 export const metadata = (post: Post, authors: Author[]): Metadata => ({
   title: post.title,
-  description: post.excerpt.substring(0, 160),
-  abstract: post.excerpt.substring(0, 160),
-  authors: [...authors.map(author => { return { name: author.name, url: author.instagram } })],
+  description: post.descriptionMeta,
+  abstract: post.descriptionMeta,
+  authors: [...authors.map(author => { return { name: author.name, url: author.instagram ?? '' } })],
   openGraph: {
     ...openGraph,
     title: post.title,
-    description: post.excerpt.substring(0, 160),
+    description: post.descriptionMeta ?? post.descriptionUI ?? '',
     images: [
       {
-        url: post.coverImage,
+        url: post.coverImagePath ?? '',
         width: 1920,
         height: 1080,
         alt: post.title,

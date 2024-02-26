@@ -1,7 +1,7 @@
 import { FuseResult } from 'fuse.js';
 
-import { Post } from '@/_types';
-import { searchPosts } from './fuse';
+import { Post } from '@prisma/client';
+import { searchPosts } from '@/_libs';
 
 // api/post?query=[query]
 export async function GET(req: Request) {

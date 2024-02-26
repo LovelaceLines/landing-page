@@ -1,17 +1,3 @@
----
-title: "🐔 A Galinha Filósofa e o Conflito Existencial: Quem Veio Primeiro, o Ovo ou a Galinha? 🥚"
-excerpt: "Uma galinha filósofa do galinheiro se vê imersa em um dilema: quem veio primeiro, o ovo ou a galinha? Enquanto suas companheiras levam suas vidas normalmente, ela reflete sobre essa questão sem resposta. Após debates infrutíferos, decide meditar sobre o assunto. Enquanto isso, o galinheiro aguarda o desfecho dessa busca existencial que desafia conceitos estabelecidos."
-tags: ["filosofia"]
-coverImage: "/posts/a-galinha-filosofa-e-o-conflito-existencial-quem-veio-primeiro-o-ovo-ou-a-galinha/cover.jfif"
-date: "2024-02-16T05:35:07.322Z"
-lastmod: "2020-03-16T05:35:07.322Z"
-slugAuthors: ["tartaruga"]
-layout: default
-nextPost: ''
-prevPost: ''
-slugRecommendedArticles: []
----
-
 🐔 A Galinha Filósofa e o Conflito Existencial: Quem Veio Primeiro, o Ovo ou a Galinha? 🥚
 
 Em um galinheiro tranquilo, onde a rotina diária consiste em ciscar no chão em busca de alimento e botar ovos, uma galinha destaca-se não apenas por sua plumagem brilhante, mas por sua mente inquisitiva e questionadora. Conhecida entre as outras galinhas como a filósofa do grupo, ela mergulha em um profundo conflito existencial que tem intrigado aves e humanos por séculos: quem veio primeiro, o ovo ou a galinha?

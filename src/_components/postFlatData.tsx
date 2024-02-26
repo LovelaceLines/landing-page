@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
-import { Post } from '@/_types';
+import { Post } from '@prisma/client';
 
 interface PostFlatDataProps {
   post: Post;
@@ -20,10 +20,10 @@ export const PostFlatData = ({ post, displayDate = true, displayExcerpt = true }
 
       {displayDate &&
         <Typography variant='subtitle2'>
-          {format(new Date(post.date), "dd 'de' MMM, yyyy", { locale: ptBR })}
+          {format(new Date(post.dateCreated), "dd 'de' MMM, yyyy", { locale: ptBR })}
         </Typography>}
 
-      {displayExcerpt && <Typography variant='body2'>{post.excerpt}</Typography>}
+      {displayExcerpt && <Typography variant='body2'>{post.descriptionUI}</Typography>}
     </Box>
   );
 };
