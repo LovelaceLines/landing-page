@@ -3,9 +3,7 @@ import Fuse, { IFuseOptions } from 'fuse.js';
 import { getAllPosts } from '@/_libs';
 import { Author, Post } from '@prisma/client';
 
-// TODO: Add a cache to avoid loading the fuse every time or singleton pattern
-
-let fuse: Fuse<Post> | null = null;
+let fuse: Fuse<Post> | undefined;
 
 export const loadFuse = async () => {
   if (fuse) return fuse;
@@ -34,7 +32,7 @@ export const searchPosts = async (query: string) => {
 };
 
 export async function getRecommendedPosts(author?: Author, post?: Post & { authors: Author[] }, limit = 3) {
-  if (!author && !post) throw new Error('post and author cannot be null at the same time');
+  if (!author && !post) throw new Error('post and author cannot be undefined at the same time');
 
   const fuse = await loadFuse();
 

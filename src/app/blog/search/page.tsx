@@ -17,7 +17,7 @@ export default function Page() {
   const [query, setQuery] = useState('');
   const [posts, setPosts] = useState<Post[]>([]);
 
-  const handleSubmit = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = useCallback(async (event: React.FormEvent<HTMLFormElement | HTMLDivElement>) => {
     event.preventDefault();
 
     if (query) setPosts(await queryResults(query));
