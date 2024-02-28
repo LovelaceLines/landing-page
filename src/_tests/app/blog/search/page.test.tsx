@@ -1,5 +1,4 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import Page from '../../../../app/blog/search/page';
 
 describe('Page', () => {
@@ -8,29 +7,27 @@ describe('Page', () => {
     const searchInput = screen.getByLabelText('Buscar postagens');
     const searchButton = screen.getByRole('button', { name: 'Buscar' });
 
-    expect(searchInput).toBeTruthy();
-    expect(searchButton).toBeTruthy();
+    expect(searchInput).toBeInTheDocument();
+    expect(searchButton).toBeInTheDocument();
   });
 
   it('updates query state on input change', () => {
     render(<Page />);
-    const searchInput = screen.getByLabelText('Buscar postagens');
+    const searchInput = screen.getByLabelText('Buscar postagens') as HTMLInputElement;
 
-    userEvent.type(searchInput, 'test query');
+    fireEvent.change(searchInput, { target: { value: 'test query' } });
 
-    expect(searchInput).toBe('test query');
+    expect(searchInput.value).toBe('test query');
   });
 
   it('submits form and fetches posts on submit', async () => {
     render(<Page />);
-    const searchInput = screen.getByLabelText('Buscar postagens');
+    const searchInput = screen.getByLabelText('Buscar postagens') as HTMLLabelElement;
     const searchButton = screen.getByRole('button', { name: 'Buscar' });
 
-    userEvent.type(searchInput, 'hello world');
+    fireEvent.change(searchInput, { target: { value: 'hello world' } });
     fireEvent.click(searchButton);
 
-    await waitFor(() => {
-      expect(screen.getByText('Hello-World!')).toBeTruthy();
-    });
+    await waitFor(() => expect(screen.getByText('Hello-World!')).toBeInTheDocument());
   });
 });
