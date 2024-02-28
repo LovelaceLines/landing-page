@@ -7,7 +7,7 @@ export const PostsRecommended = ({ posts }: { posts: Post[] }) => {
   if (!posts.length) return null;
 
   return (
-    <Container maxWidth='md' disableGutters>
+    <Container maxWidth='sm' disableGutters>
       <Typography variant='h6'>Recomendados:</Typography>
 
       {posts.map(post => (
