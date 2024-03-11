@@ -60,7 +60,7 @@ export const InstagramFeed = async () => {
             </Link>
           </Typography>
           <Box>
-            <PublicationReels feed={feedVideos} sx={{ display: { xs: 'none', md: 'flex' } }} />
+            {/* <PublicationReels feed={feedVideos} sx={{ display: { xs: 'none', md: 'flex' } }} /> */}
             <PublicationFeedImage feed={feedImages} />
           </Box>
         </Box>

@@ -7,7 +7,7 @@
 
 Este repositório abriga a landing page e o blog da Lovelace Lines. Desenvolvido com uma combinação de tecnologias modernas, o projeto oferece uma experiência dinâmica e eficiente aos usuários com componentes SSR, CSR e Api de consulta. 
 
-## Tecnologias
+## Tecnologias Usadas
 
 | [Next.js](https://nextjs.org/) | [React](https://react.dev/) | [MUI](https://www.npmjs.com/package/@mui/material) | [rehype](https://www.npmjs.com/package/rehype) | [remark](https://www.npmjs.com/package/remark) | [Fuse.js](https://www.fusejs.io/) | [Prisma](https://www.prisma.io/) | [ESLint](https://www.npmjs.com/package/eslint) | [Zod](https://zod.dev/) | [Jest](https://jestjs.io/) | [Babel](https://babeljs.io/) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
@@ -20,6 +20,11 @@ Este repositório abriga a landing page e o blog da Lovelace Lines. Desenvolvido
 * Navegue por uma lista vasta de conteúdo relacionados.
 * Configure postagens comuns para uma experiência personalizada.
 * Estabeleça conexões entre postagens, autores e tags para uma compreensão mais profunda.
+
+![video](./docs/gifs/bem-vindo.gif)
+![video](./docs/gifs/blog-part-1.gif)
+![video](./docs/gifs/blog-part-2.gif)
+![video](./docs/gifs/blog-part-3.gif)
 
 ## Getting Started
 
